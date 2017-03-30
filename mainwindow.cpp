@@ -12,6 +12,7 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+//comment
 
 void MainWindow::on_Quit_clicked()
 {
