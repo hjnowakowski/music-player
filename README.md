@@ -2,5 +2,5 @@
 
 Rozgrzewamy się do robienia projektu 🤓
 
+To nasze branch-e (dla porządku) możemy nazywać od imienia, czyli np. `henryk1`
 
-zadziałało dopiero po  `git push origin master --force`
