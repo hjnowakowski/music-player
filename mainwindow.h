@@ -18,6 +18,10 @@ public:
 private slots:
     void on_Quit_clicked();
 
+    void on_lineEdit_editingFinished();
+
+    void on_pushButton_Login_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
