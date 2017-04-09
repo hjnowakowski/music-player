@@ -2,6 +2,7 @@
 
 Rozgrzewamy się do robienia projektu 🤓
 
-Zrobiłem okienko z login i password, po wpisaniu program sprawdza, czy wprowadzone QString-i są takie same
-jak domyślne, połączenie z bazą danych w toku, wywala kilka błędów, postaram się je wyeliminować asap.
+Zrobiłem okienko z **login** i **password**, po wpisaniu program sprawdza, czy wprowadzone QString-i są takie same
+jak domyślne, połączenie z **bazą danych** w toku, wywala kilka błędów, postaram się je wyeliminować asap.
+[tutorial](https://www.youtube.com/watch?v=a-HPsj42nRo&t=375s), na którym się wzorowałem.
 Henryk
