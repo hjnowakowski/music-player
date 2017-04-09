@@ -3,4 +3,5 @@
 Rozgrzewamy się do robienia projektu 🤓
 
 Zrobiłem okienko z login i password, po wpisaniu program sprawdza, czy wprowadzone QString-i są takie same
-jak domyślne, zaraz zrobię połączenie z bazą danych. (Henryk)
+jak domyślne, połączenie z bazą danych w toku, wywala kilka błędów, postaram się je wyeliminować asap.
+Henryk
