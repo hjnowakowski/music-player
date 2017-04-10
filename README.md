@@ -1,8 +1,22 @@
-## Welcome in projekt1_rozgrzewka
+## Welcome in projekt1
 
 Rozgrzewamy się do robienia projektu 🤓
 
-Zrobiłem okienko z **login** i **password**, po wpisaniu program sprawdza, czy wprowadzone QString-i są takie same
-jak domyślne, połączenie z **bazą danych** w toku, wywala kilka błędów, postaram się je wyeliminować asap.
-[tutorial](https://www.youtube.com/watch?v=a-HPsj42nRo&t=375s), na którym się wzorowałem.
-Henryk
+Główna idea projektu: odtwarzacz muzyczny, dla każdego użytkownika sugerowane utwory
+
+Piszemy w **c++**, korzystamy z **qt** i **sqlite-a**.
+
+Przydatne strony/tutoriale:
+* [tutorial qt, youtube](https://www.youtube.com/playlist?list=PLS1QulWo1RIZiBcTr5urECberTITj7gjA) (znajdziecie jeszcze dużo dużo więcej 
+* [tutorial, sqlite](https://www.tutorialspoint.com/sqlite/index.htm)
+* [dobry przewodnik po git-cie](http://rogerdudler.github.io/git-guide/index.pl.html)
+* []()
+
+
+  
+Download list:
+* [sqlite3](https://sqlite.org/download.html)
+* [QT IDE](https://www.qt.io/download-open-source/?__hssc=152220518.2.1491851308247&__hstc=152220518.d659e36e51836f27c54dafacd652b2b8.1490452226435.1491735289943.1491851308247.9&__hsfp=2254599158&hsCtaTracking=f977210e-de67-475f-a32b-65cec207fd03%7Cd62710cd-e1db-46aa-8d4d-2f1c1ffdacea#section-2)
+* [git](https://git-scm.com/download/win)
+
+Jak coś piszcie @hjnowakowski
