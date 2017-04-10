@@ -5,7 +5,7 @@ Główna idea projektu: odtwarzacz muzyczny, dla każdego użytkownika sugerowan
 Piszemy w **c++**, korzystamy z **qt** i **sqlite-a**.
 
 Przydatne strony/tutoriale:
-* [tutorial qt, youtube](https://www.youtube.com/playlist?list=PLS1QulWo1RIZiBcTr5urECberTITj7gjA) (znajdziecie jeszcze dużo dużo więcej 
+* [tutorial qt, youtube](https://www.youtube.com/playlist?list=PLS1QulWo1RIZiBcTr5urECberTITj7gjA) na youtube jest ich bardzo dużo
 * [tutorial, sqlite](https://www.tutorialspoint.com/sqlite/index.htm)
 * [dobry przewodnik po git-cie](http://rogerdudler.github.io/git-guide/index.pl.html)
 
