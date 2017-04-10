@@ -1,8 +1,6 @@
 ## Welcome in projekt1
-
-Rozgrzewamy się do robienia projektu 🤓
-
-Główna idea projektu: odtwarzacz muzyczny, dla każdego użytkownika sugerowane utwory
+ 
+Główna idea projektu: odtwarzacz muzyczny, dla każdego użytkownika sugerowane utwory 🤓
 
 Piszemy w **c++**, korzystamy z **qt** i **sqlite-a**.
 
