@@ -2,6 +2,12 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "secdialog.h"
+#include <QDebug>
+#include <QFileInfo>
+#include <QtSql>
+
+
 
 namespace Ui {
 class MainWindow;
@@ -24,6 +30,8 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    QSqlDatabase mydb;
+    SecDialog *secDialog;
 };
 
 #endif // MAINWINDOW_H
