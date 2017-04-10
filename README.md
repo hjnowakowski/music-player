@@ -10,8 +10,6 @@ Przydatne strony/tutoriale:
 * [tutorial qt, youtube](https://www.youtube.com/playlist?list=PLS1QulWo1RIZiBcTr5urECberTITj7gjA) (znajdziecie jeszcze dużo dużo więcej 
 * [tutorial, sqlite](https://www.tutorialspoint.com/sqlite/index.htm)
 * [dobry przewodnik po git-cie](http://rogerdudler.github.io/git-guide/index.pl.html)
-* []()
-
 
   
 Download list:
