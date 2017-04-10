@@ -3,8 +3,7 @@
 Rozgrzewamy się do robienia projektu 🤓
 
 
-(link)[https://sqlite.org/download.html]
-[link](https://sqlite.org/download.html)
+[Link do pobrania Sqlite3](https://sqlite.org/download.html)
 
 
 
