@@ -3,4 +3,7 @@
 Rozgrzewamy się do robienia projektu 🤓
 
 
+(link)[https://sqlite.org/download.html]
+
+
 zadziałało dopiero po  `git push origin master --force`
