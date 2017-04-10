@@ -52,11 +52,11 @@ void MainWindow::on_pushButton_Login_clicked()
             count++;
         }
         if(count==1)
-            ui->label->setText("username and password are correct!");
+            ui->label->setText("username and password are correct!😺");
         if(count>1)
-            ui->label->setText("duplicate username and password!");
+            ui->label->setText("duplicate username and password!😾");
         if(count<1)
-            ui->label->setText("username and password are not correct!");
+            ui->label->setText("username and password are not correct!😿");
     }
 
     //if(username == "test" && password == "test"){
@@ -64,7 +64,7 @@ void MainWindow::on_pushButton_Login_clicked()
         //hide();
         //secDialog = new SecDialog(this);
         //secDialog->show();
-   // }
+   //}
     //else{
         //QMessageBox::warning(this, "Login", "Username and password are not correct 😝");
     //}

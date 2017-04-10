@@ -26,10 +26,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    secdialog.cpp
+    secdialog.cpp \
+    welcome_window.cpp
 
 HEADERS  += mainwindow.h \
-    secdialog.h
+    secdialog.h \
+    welcome_window.h
 
 FORMS    += mainwindow.ui \
-    secdialog.ui
+    secdialog.ui \
+    welcome_window.ui
