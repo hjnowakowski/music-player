@@ -1,6 +1,8 @@
 #-------------------------------------------------
 #
 # Project created by QtCreator 2017-03-25T18:38:44
+# by Katarzyna Nowicka, Łukasz Rodak, Henryk Nowakowski
+# All rigths reserved
 #
 #-------------------------------------------------
 
@@ -25,11 +27,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp \
-    secdialog.cpp
+    welcome_window.cpp \
+    log_window.cpp \
+    sign_window.cpp
 
-HEADERS  += mainwindow.h \
-    secdialog.h
+HEADERS  += \
+    welcome_window.h \
+    log_window.h \
+    sign_window..h
 
-FORMS    += mainwindow.ui \
-    secdialog.ui
+FORMS    += \
+    welcome_window.ui \
+    sign_window.ui \
+    log_window.ui
