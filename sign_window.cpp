@@ -68,8 +68,7 @@ void signingWindow::on_pushButton_signin_clicked()
 
             //if(qry.exec("insert into users (id, name, age, username, password) values ($next_id, :"+name+", "+age+", :"+username+", :"+password+");")) QMessageBox::information(this, "Sign in", "Data accepted!");
             //else QMessageBox::warning(this, "Error", qry.lastError().text()+"Error code: "+qry.lastError().number());
-            qry.prepare("INSERT INTO users (id, name, age, username, password)"
-                          "VALUES ($next_id, :name, :age, :username, :password)");
+            qry.prepare("INSERT INTO users (id, name, age, username, password) VALUES ( null, :name, :age, :username, :password)");  //id przyjmuje wartość null, bo sam się potrafi inkrementować
             qry.bindValue(":name", name);
             qry.bindValue(":age", age);
             qry.bindValue(":username", username);
