@@ -5,10 +5,6 @@
 
 
 
-
-//#include <QMessageBox>  odkomentować jak będą potrzebne komunikaty
-
-
 welcome_window::welcome_window(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::welcome_window)
@@ -19,7 +15,6 @@ welcome_window::welcome_window(QWidget *parent) :
 welcome_window::~welcome_window()
 {
     delete ui;
-    //connect(button_login, SIGNAL(on_button_login_clicked()), this, SLOT(openLoginWindow());
 }
 
 void welcome_window::on_Quit_clicked()

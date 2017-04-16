@@ -12,7 +12,7 @@ signingWindow::signingWindow(QWidget *parent) :
     users_db= QSqlDatabase::addDatabase("QSQLITE");
     users_db.setDatabaseName("/Users/henryknowakowski/Projekt2_rozgrzewka2/users.db");
 
-    //dir to db is diff on your devices, to make it easy to paste, comment your own below
+    //dir to db is different on your devices, to make it easy to paste, comment your own below
 
     //Users/henryknowakowski/Projekt2_rozgrzewka2/users.db  Henryk Nowakowski
 
@@ -40,9 +40,6 @@ void signingWindow::on_pushButton_signin_clicked()
         return;
     }
 
-    QMessageBox::information(this, "Wiek", age);   //do testowania
-
-
     QSqlQuery qry;
 
     int count = 0;
@@ -58,16 +55,13 @@ void signingWindow::on_pushButton_signin_clicked()
         if(count>1){
             ui->label_status->setText("username is correct! yupiiii");
             //todo dodanie użytkownika + exepcion
-            //qry.exec("insert into users values ($next_id, '"+name+"', "+age+", '"+username+"', '"+password+"');");
-
-
-
         }
         if(count<1){
             ui->label_status->setText("username and password are not in db!😿");
 
             //if(qry.exec("insert into users (id, name, age, username, password) values ($next_id, :"+name+", "+age+", :"+username+", :"+password+");")) QMessageBox::information(this, "Sign in", "Data accepted!");
             //else QMessageBox::warning(this, "Error", qry.lastError().text()+"Error code: "+qry.lastError().number());
+
             qry.prepare("INSERT INTO users (id, name, age, username, password) VALUES ( null, :name, :age, :username, :password)");  //id przyjmuje wartość null, bo sam się potrafi inkrementować
             qry.bindValue(":name", name);
             qry.bindValue(":age", age);
