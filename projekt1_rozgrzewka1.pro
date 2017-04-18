@@ -29,14 +29,17 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += main.cpp\
     welcome_window.cpp \
     log_window.cpp \
-    sign_window.cpp
+    sign_window.cpp \
+    player_window.cpp
 
 HEADERS  += \
     welcome_window.h \
     log_window.h \
-    sign_window..h
+    sign_window..h \
+    player_window.h
 
 FORMS    += \
     welcome_window.ui \
     sign_window.ui \
-    log_window.ui
+    log_window.ui \
+    player_window.ui

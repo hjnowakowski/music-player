@@ -69,7 +69,7 @@ void signingWindow::on_pushButton_signin_clicked()
             qry.bindValue(":password", password);
             qry.exec();
             //insert into users values ($next_id, 'Johnny', 32, 'johnny123', '123');
-            //to dodifferent qry
+            //todo different qry
             QMessageBox::warning(this, "Error with adding data to users.db: ", qry.lastError().text()+" Error code: "+qry.lastError().number());
         }
     }
