@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "sign_window..h"
 #include "log_window.h"
+#include "player_window.h"
 
 
 
@@ -30,10 +31,13 @@ private slots:
 
     void on_button_signin_clicked();
 
+    void on_pushButton_player_clicked();
+
 private:
     Ui::welcome_window *ui;
     MainWindow *logwindow;
     signingWindow *signwindow;
+    player_window *playerwindow;
 };
 
 #endif // WELCOME_WINDOW_H

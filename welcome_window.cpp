@@ -36,3 +36,10 @@ void welcome_window::on_button_signin_clicked()
     signwindow = new signingWindow(this);
     signwindow->show();
 }
+
+void welcome_window::on_pushButton_player_clicked()
+{
+    hide();
+    playerwindow = new player_window(this);
+    playerwindow->show();
+}
