@@ -31,7 +31,7 @@ void player_window::on_horizontalSlider_volume_sliderMoved(int position)
 
 void player_window::on_pushButton_clicked()
 {
-    player->setMedia(QUrl::fromLocalFile("/Users/henryknowakowski/Desktop/BeBop25.mp3"));
+    player->setMedia(QUrl::fromLocalFile("/Users/henryknowakowski/Projekt2_rozgrzewka2/mp3_files/BeBop25.mp3"));
     player->play();
     qDebug() << player->errorString();
 }
