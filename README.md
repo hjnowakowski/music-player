@@ -18,6 +18,6 @@ Download list:
 
 **Szukajcie najbardziej aktualnych plików w branchach, aktualnie pracuję nad begin_window (ekran powitalny + logowanie się + rejestrowanie się).**
 
-![](projekt1/project_schemes/project_scheme.png)
+![](https://github.com/hjnowakowski/projekt1/blob/player/project_schemes/project_scheme.png)
 
 Jak coś piszcie @hjnowakowski
