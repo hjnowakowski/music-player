@@ -80,7 +80,7 @@
       <widget class="QPushButton" name="pushButton_player">
        <property name="geometry">
         <rect>
-         <x>60</x>
+         <x>80</x>
          <y>240</y>
          <width>191</width>
          <height>71</height>

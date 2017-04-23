@@ -17,10 +17,10 @@
    <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>90</y>
-      <width>481</width>
-      <height>361</height>
+      <x>390</x>
+      <y>50</y>
+      <width>321</width>
+      <height>271</height>
      </rect>
     </property>
     <property name="title">
@@ -81,7 +81,7 @@
       <string>Volume</string>
      </property>
     </widget>
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>50</x>
@@ -107,6 +107,16 @@
       </item>
      </layout>
     </widget>
+   </widget>
+   <widget class="QListView" name="listView">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>80</y>
+      <width>231</width>
+      <height>291</height>
+     </rect>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
