@@ -1,6 +1,6 @@
 #include "welcome_window.h"
 #include "ui_welcome_window.h"
-#include "sign_window..h"
+#include "sign_window.h"
 #include "log_window.h"
 
 

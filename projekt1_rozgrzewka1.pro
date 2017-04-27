@@ -36,8 +36,8 @@ SOURCES += main.cpp\
 HEADERS  += \
     welcome_window.h \
     log_window.h \
-    sign_window..h \
-    player_window.h
+    player_window.h \
+    sign_window.h
 
 FORMS    += \
     welcome_window.ui \

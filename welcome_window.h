@@ -2,7 +2,7 @@
 #define WELCOME_WINDOW_H
 
 #include <QMainWindow>
-#include "sign_window..h"
+#include "sign_window.h"
 #include "log_window.h"
 #include "player_window.h"
 

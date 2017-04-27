@@ -1,4 +1,4 @@
-#include "sign_window..h"
+#include "sign_window.h"
 #include "ui_signingwindow.h"
 #include <QMessageBox>
 
