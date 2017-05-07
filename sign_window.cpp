@@ -1,6 +1,7 @@
 #include "sign_window.h"
 #include "ui_signingwindow.h"
 #include <QMessageBox>
+#include <QCalendarWidget>
 
 
 signingWindow::signingWindow(QWidget *parent) :
@@ -8,6 +9,8 @@ signingWindow::signingWindow(QWidget *parent) :
     ui(new Ui::signingWindow)
 {
     ui->setupUi(this);
+    //calendar->setGridVisible(true);
+
 
     users_db= QSqlDatabase::addDatabase("QSQLITE");
     users_db.setDatabaseName("/Users/henryknowakowski/Projekt2_rozgrzewka2/users.db");
@@ -35,6 +38,8 @@ void signingWindow::on_pushButton_signin_clicked()
     QString name = ui->lineEdit_name->text();
     QString age = ui->spinBox_age->text();
 
+
+
     if(!users_db.isOpen()){
         qDebug()<<"Failed to open database";
         return;
@@ -49,8 +54,8 @@ void signingWindow::on_pushButton_signin_clicked()
             count++;
         }
         if(count==1){
-            ui->label_status->setText("username and password are correct!😺");
-            QMessageBox::warning(this, "Sign in", "such username already exists");
+            ui->label_status->setText("username and password are in db!😺");
+            QMessageBox::warning(this, "Sign in", "such user already exists");
         }
         if(count>1){
             ui->label_status->setText("username is correct! yupiiii");
@@ -68,9 +73,8 @@ void signingWindow::on_pushButton_signin_clicked()
             qry.bindValue(":username", username);
             qry.bindValue(":password", password);
             qry.exec();
-            //insert into users values ($next_id, 'Johnny', 32, 'johnny123', '123');
-            //todo different qry
-            QMessageBox::warning(this, "Error with adding data to users.db: ", qry.lastError().text()+" Error code: "+qry.lastError().number());
+
+            //TODO zaakceptowane wartości muszą iść "dalej" do playera, może zrobić je jakoś publicznymi
         }
     }
     else QMessageBox::warning(this, "Error with finding data in users.db: ", qry.lastError().text()+"Error code: "+qry.lastError().number());

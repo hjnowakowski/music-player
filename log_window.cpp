@@ -1,6 +1,9 @@
 #include "log_window.h"
 #include "ui_mainwindow.h"
 #include <QMessageBox>
+#include <ctime>
+#include <iostream>
+#include <string>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -35,8 +38,21 @@ void MainWindow::on_lineEdit_editingFinished()
 
 void MainWindow::on_pushButton_Login_clicked()
 {
+    time_t t = time(0);
+    struct tm * now = localtime( & t );
+    std::string year = std::to_string(now->tm_year + 1900);
+    std::string mon = std::to_string(now->tm_mon + 1);
+    std::string day = std::to_string(now->tm_mday);
+    //konwersja do qstring, bo qt tego wymaga
+    QString year1 = QString::fromStdString(year);
+    QString mon1 = QString::fromStdString(mon);
+    QString day1 = QString::fromStdString(day);
+
+
     QString username = ui->lineEdit_username->text();
     QString password = ui->lineEdit_password->text();
+
+
 
     if(!users_db.isOpen()){
         qDebug()<<"Failed to open database";
@@ -51,23 +67,15 @@ void MainWindow::on_pushButton_Login_clicked()
         while(qry.next()){
             count++;
         }
-        if(count==1)
+        if(count==1){
             ui->label_status->setText("username and password are correct!😺");
+              //TODO zaakceptowane wartości muszą iść "dalej" do playera, może zrobić je jakoś publicznymi
+        }
+
         if(count>1)
             ui->label_status->setText("duplicate username and password!😾");
         if(count<1)
-            ui->label_status->setText("username and password are not correct!😿");
-    }
-
-    // ponieżej znajduje się wcześniejsze rozwiązanie, które polego na porównaniu wpisanych danych z domyślnymi, tutaj: username = "test" i password = "test"
-
-    //if(username == "test" && password == "test"){
-        //QMessageBox::information(this, "Login", "Username and password are correct!!");
-        //hide();
-        //secDialog = new SecDialog(this);
-        //secDialog->show();
-   //}
-    //else{
-        //QMessageBox::warning(this, "Login", "Username and password are not correct 😝");
-    //}
+            //ui->label_status->setText("username and password are not correct!😿");
+            ui->label_status->setText(year1+'-' + mon1+'-' + day1);  //chwilowo
+    }    
 }

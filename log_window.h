@@ -5,6 +5,9 @@
 #include <QDebug>
 #include <QFileInfo>
 #include <QtSql>
+#include <ctime>
+#include <iostream>
+#include <string>
 
 
 

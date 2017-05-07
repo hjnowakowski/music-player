@@ -5,6 +5,7 @@
 #include <QDebug>
 #include <QFileInfo>
 #include <QtSql>
+#include <QCalendarWidget>
 
 
 namespace Ui {
@@ -25,6 +26,7 @@ private slots:
 private:
     Ui::signingWindow *ui;
     QSqlDatabase users_db;
+    QCalendarWidget *calendar;
 };
 
 #endif // SIGNINGWINDOW_H
