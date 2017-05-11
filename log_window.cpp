@@ -1,5 +1,6 @@
 #include "log_window.h"
-#include "ui_mainwindow.h"
+#include "ui_log_window.h"
+#include "welcome_window.h"
 #include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -9,7 +10,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     users_db = QSqlDatabase::addDatabase("QSQLITE");
-    users_db.setDatabaseName("/Users/henryknowakowski/Projekt2_rozgrzewka2/users.db");
+    users_db.setDatabaseName("D:\Programy\Programy\QT\Projekt\users.db");
 
     if(!users_db.open())
         ui->label_status->setText("Failed to open database");
@@ -70,4 +71,13 @@ void MainWindow::on_pushButton_Login_clicked()
     //else{
         //QMessageBox::warning(this, "Login", "Username and password are not correct 😝");
     //}
+}
+
+void MainWindow::on_back_Button_clicked()
+{
+   // DO POPRAWY
+
+   // hide();
+   // welcome_window = new welcome_window(this);
+   // welcome_window -> show();
 }

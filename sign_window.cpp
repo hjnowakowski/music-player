@@ -1,5 +1,5 @@
 #include "sign_window..h"
-#include "ui_signingwindow.h"
+#include "ui_sign_window.h"
 #include <QMessageBox>
 
 
@@ -10,7 +10,7 @@ signingWindow::signingWindow(QWidget *parent) :
     ui->setupUi(this);
 
     users_db= QSqlDatabase::addDatabase("QSQLITE");
-    users_db.setDatabaseName("/Users/henryknowakowski/Projekt2_rozgrzewka2/users.db");
+    users_db.setDatabaseName("D:\Programy\Programy\QT\Projekt\users.db");
 
     //dir to db is different on your devices, to make it easy to paste, comment your own below
 
@@ -70,8 +70,8 @@ void signingWindow::on_pushButton_signin_clicked()
             qry.exec();
             //insert into users values ($next_id, 'Johnny', 32, 'johnny123', '123');
             //todo different qry
-            QMessageBox::warning(this, "Error with adding data to users.db: ", qry.lastError().text()+" Error code: "+qry.lastError().number());
+            QMessageBox::warning(this, "Error with adding data to users.db (insert value): ", qry.lastError().text()+" Error code: "+qry.lastError().number());
         }
     }
-    else QMessageBox::warning(this, "Error with finding data in users.db: ", qry.lastError().text()+"Error code: "+qry.lastError().number());
+    else QMessageBox::warning(this, "Error with finding data in users.db (if exists): ", qry.lastError().text()+"Error code: "+qry.lastError().number());
 }

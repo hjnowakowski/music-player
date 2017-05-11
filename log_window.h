@@ -27,6 +27,8 @@ private slots:
 
     void on_pushButton_Login_clicked();
 
+    void on_back_Button_clicked();
+
 private:
     Ui::MainWindow *ui;
     QSqlDatabase users_db;

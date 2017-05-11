@@ -13,6 +13,13 @@
   <property name="windowTitle">
    <string>Sign in window</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>C:/Users/Łukasz/Desktop/nuta.ico</normaloff>C:/Users/Łukasz/Desktop/nuta.ico</iconset>
+  </property>
+  <property name="windowOpacity">
+   <double>1.000000000000000</double>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
@@ -109,7 +116,7 @@
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="">
+      <widget class="QWidget" name="layoutWidget">
        <property name="geometry">
         <rect>
          <x>30</x>
@@ -131,7 +138,7 @@
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="">
+      <widget class="QWidget" name="layoutWidget">
        <property name="geometry">
         <rect>
          <x>30</x>
@@ -157,6 +164,19 @@
         </item>
        </layout>
       </widget>
+      <widget class="QPushButton" name="sign_Back_Button">
+       <property name="geometry">
+        <rect>
+         <x>460</x>
+         <y>430</y>
+         <width>75</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Back</string>
+       </property>
+      </widget>
      </widget>
     </item>
    </layout>
@@ -167,7 +187,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

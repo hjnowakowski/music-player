@@ -38,8 +38,9 @@ HEADERS  += \
     sign_window..h \
     player_window.h
 
-FORMS    += \
+FORMS += \
     welcome_window.ui \
     sign_window.ui \
     log_window.ui \
     player_window.ui
+
