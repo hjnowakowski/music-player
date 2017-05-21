@@ -1,7 +1,9 @@
 #include "sign_window.h"
 #include "ui_signingwindow.h"
 #include <QMessageBox>
-#include <QCalendarWidget>
+
+
+
 
 
 signingWindow::signingWindow(QWidget *parent) :
@@ -9,8 +11,6 @@ signingWindow::signingWindow(QWidget *parent) :
     ui(new Ui::signingWindow)
 {
     ui->setupUi(this);
-    //calendar->setGridVisible(true);
-
 
     users_db= QSqlDatabase::addDatabase("QSQLITE");
     users_db.setDatabaseName("/Users/henryknowakowski/Projekt2_rozgrzewka2/users.db");
@@ -22,8 +22,10 @@ signingWindow::signingWindow(QWidget *parent) :
 
     if(!users_db.open())
         ui->label_status->setText("Failed to open database");
-    else
+    else{
         ui->label_status->setText("Connected...");
+        std::cout << "lalala"<< std::endl;
+    }
 }
 
 signingWindow::~signingWindow()

@@ -77,7 +77,6 @@ public:
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
         pushButton = new QPushButton(layoutWidget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setEnabled(true);
 
         horizontalLayout->addWidget(pushButton);
 

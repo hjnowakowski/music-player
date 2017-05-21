@@ -25,10 +25,6 @@ private slots:
 
     void on_Quit_clicked();
 
-
-//public slots:
-   //void openLoginWindow();
-
     void on_button_signin_clicked();
 
     void on_pushButton_player_clicked();

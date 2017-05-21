@@ -1,5 +1,6 @@
 #include "player_window.h"
 #include "ui_player_window.h"
+#include <iostream>
 
 player_window::player_window(QWidget *parent) :
     QMainWindow(parent),
@@ -31,8 +32,10 @@ void player_window::on_horizontalSlider_volume_sliderMoved(int position)
 
 void player_window::on_pushButton_clicked()
 {
+    std::cout << "Play button pressed" << std::endl;
     player->setMedia(QUrl::fromLocalFile("/Users/henryknowakowski/Projekt2_rozgrzewka2/mp3_files/BeBop25.mp3"));
     player->play();
+    std::cout << "Play button pressed" << std::endl;
     qDebug() << player->errorString();
 }
 
