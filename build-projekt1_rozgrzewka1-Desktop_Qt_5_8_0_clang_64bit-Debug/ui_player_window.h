@@ -23,6 +23,7 @@
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSlider>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QTreeWidget>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -41,6 +42,7 @@ public:
     QPushButton *pushButton;
     QPushButton *pushButton_2;
     QListView *listView;
+    QTreeWidget *treeWidget;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -53,7 +55,7 @@ public:
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         groupBox = new QGroupBox(centralwidget);
         groupBox->setObjectName(QStringLiteral("groupBox"));
-        groupBox->setGeometry(QRect(390, 50, 321, 271));
+        groupBox->setGeometry(QRect(460, 50, 321, 271));
         horizontalSlider_progress = new QSlider(groupBox);
         horizontalSlider_progress->setObjectName(QStringLiteral("horizontalSlider_progress"));
         horizontalSlider_progress->setGeometry(QRect(120, 80, 160, 16));
@@ -88,7 +90,13 @@ public:
 
         listView = new QListView(centralwidget);
         listView->setObjectName(QStringLiteral("listView"));
-        listView->setGeometry(QRect(70, 80, 231, 291));
+        listView->setGeometry(QRect(240, 90, 211, 261));
+        treeWidget = new QTreeWidget(centralwidget);
+        QTreeWidgetItem *__qtreewidgetitem = new QTreeWidgetItem();
+        __qtreewidgetitem->setText(0, QStringLiteral("1"));
+        treeWidget->setHeaderItem(__qtreewidgetitem);
+        treeWidget->setObjectName(QStringLiteral("treeWidget"));
+        treeWidget->setGeometry(QRect(20, 80, 201, 281));
         player_window->setCentralWidget(centralwidget);
         menubar = new QMenuBar(player_window);
         menubar->setObjectName(QStringLiteral("menubar"));

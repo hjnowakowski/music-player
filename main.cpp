@@ -8,5 +8,4 @@ int main(int argc, char *argv[])
     welcome_window w;
     w.show();
     return a.exec();
-    //kom
 }
