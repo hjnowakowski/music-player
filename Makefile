@@ -52,19 +52,23 @@ SOURCES       = main.cpp \
 		welcome_window.cpp \
 		log_window.cpp \
 		sign_window.cpp \
-		player_window.cpp moc_welcome_window.cpp \
+		player_window.cpp \
+		dragndrop.cpp moc_welcome_window.cpp \
 		moc_log_window.cpp \
 		moc_player_window.cpp \
-		moc_sign_window.cpp
+		moc_sign_window.cpp \
+		moc_dragndrop.cpp
 OBJECTS       = main.o \
 		welcome_window.o \
 		log_window.o \
 		sign_window.o \
 		player_window.o \
+		dragndrop.o \
 		moc_welcome_window.o \
 		moc_log_window.o \
 		moc_player_window.o \
-		moc_sign_window.o
+		moc_sign_window.o \
+		moc_dragndrop.o
 DIST          = ../Qt/5.8/clang_64/mkspecs/features/spec_pre.prf \
 		../Qt/5.8/clang_64/mkspecs/qdevice.pri \
 		../Qt/5.8/clang_64/mkspecs/features/device_config.prf \
@@ -214,6 +218,7 @@ DIST          = ../Qt/5.8/clang_64/mkspecs/features/spec_pre.prf \
 		../Qt/5.8/clang_64/mkspecs/features/qt_config.prf \
 		../Qt/5.8/clang_64/mkspecs/macx-clang/qmake.conf \
 		../Qt/5.8/clang_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../Qt/5.8/clang_64/mkspecs/features/exclusive_builds.prf \
 		../Qt/5.8/clang_64/mkspecs/features/mac/sdk.prf \
 		../Qt/5.8/clang_64/mkspecs/features/toolchain.prf \
@@ -243,11 +248,13 @@ DIST          = ../Qt/5.8/clang_64/mkspecs/features/spec_pre.prf \
 		projekt1_rozgrzewka1.pro welcome_window.h \
 		log_window.h \
 		player_window.h \
-		sign_window.h main.cpp \
+		sign_window.h \
+		dragndrop.h main.cpp \
 		welcome_window.cpp \
 		log_window.cpp \
 		sign_window.cpp \
-		player_window.cpp
+		player_window.cpp \
+		dragndrop.cpp
 QMAKE_TARGET  = projekt1_rozgrzewka1
 DESTDIR       = 
 TARGET        = projekt1_rozgrzewka1.app/Contents/MacOS/projekt1_rozgrzewka1
@@ -256,7 +263,7 @@ TARGET        = projekt1_rozgrzewka1.app/Contents/MacOS/projekt1_rozgrzewka1
 first: all
 ####### Build rules
 
-$(TARGET): ui_welcome_window.h ui_sign_window.h ui_log_window.h ui_player_window.h $(OBJECTS)  
+$(TARGET): ui_welcome_window.h ui_sign_window.h ui_log_window.h ui_player_window.h ui_dragndrop.h $(OBJECTS)  
 	@test -d projekt1_rozgrzewka1.app/Contents/MacOS/ || mkdir -p projekt1_rozgrzewka1.app/Contents/MacOS/
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
@@ -409,6 +416,7 @@ Makefile: projekt1_rozgrzewka1.pro ../Qt/5.8/clang_64/mkspecs/macx-clang/qmake.c
 		../Qt/5.8/clang_64/mkspecs/features/qt_config.prf \
 		../Qt/5.8/clang_64/mkspecs/macx-clang/qmake.conf \
 		../Qt/5.8/clang_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../Qt/5.8/clang_64/mkspecs/features/exclusive_builds.prf \
 		../Qt/5.8/clang_64/mkspecs/features/mac/sdk.prf \
 		../Qt/5.8/clang_64/mkspecs/features/toolchain.prf \
@@ -592,6 +600,7 @@ Makefile: projekt1_rozgrzewka1.pro ../Qt/5.8/clang_64/mkspecs/macx-clang/qmake.c
 ../Qt/5.8/clang_64/mkspecs/features/qt_config.prf:
 ../Qt/5.8/clang_64/mkspecs/macx-clang/qmake.conf:
 ../Qt/5.8/clang_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../Qt/5.8/clang_64/mkspecs/features/exclusive_builds.prf:
 ../Qt/5.8/clang_64/mkspecs/features/mac/sdk.prf:
 ../Qt/5.8/clang_64/mkspecs/features/toolchain.prf:
@@ -655,9 +664,9 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../Qt/5.8/clang_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents welcome_window.h log_window.h player_window.h sign_window.h $(DISTDIR)/
-	$(COPY_FILE) --parents main.cpp welcome_window.cpp log_window.cpp sign_window.cpp player_window.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents welcome_window.ui sign_window.ui log_window.ui player_window.ui $(DISTDIR)/
+	$(COPY_FILE) --parents welcome_window.h log_window.h player_window.h sign_window.h dragndrop.h $(DISTDIR)/
+	$(COPY_FILE) --parents main.cpp welcome_window.cpp log_window.cpp sign_window.cpp player_window.cpp dragndrop.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents welcome_window.ui sign_window.ui log_window.ui player_window.ui dragndrop.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -667,6 +676,7 @@ clean: compiler_clean
 
 distclean: clean 
 	-$(DEL_FILE) -r projekt1_rozgrzewka1.app
+	-$(DEL_FILE) .qmake.stash
 	-$(DEL_FILE) Makefile
 
 
@@ -688,9 +698,9 @@ compiler_moc_predefs_clean:
 moc_predefs.h: ../Qt/5.8/clang_64/mkspecs/features/data/dummy.cpp
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -pipe -stdlib=libc++ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk -mmacosx-version-min=10.9 $(EXPORT_QMAKE_XARCH_CFLAGS) -g -std=gnu++11 -Wall -W -dM -E -o moc_predefs.h ../Qt/5.8/clang_64/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_welcome_window.cpp moc_log_window.cpp moc_player_window.cpp moc_sign_window.cpp
+compiler_moc_header_make_all: moc_welcome_window.cpp moc_log_window.cpp moc_player_window.cpp moc_sign_window.cpp moc_dragndrop.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_welcome_window.cpp moc_log_window.cpp moc_player_window.cpp moc_sign_window.cpp
+	-$(DEL_FILE) moc_welcome_window.cpp moc_log_window.cpp moc_player_window.cpp moc_sign_window.cpp moc_dragndrop.cpp
 moc_welcome_window.cpp: ../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
 		sign_window.h \
@@ -720,6 +730,9 @@ moc_welcome_window.cpp: ../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QMain
 		player_window.h \
 		../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/QMediaPlayer \
 		../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediaplayer.h \
+		dragndrop.h \
+		../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QWidget \
+		../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
 		welcome_window.h \
 		moc_predefs.h \
 		../Qt/5.8/clang_64/bin/moc
@@ -792,11 +805,18 @@ moc_sign_window.cpp: ../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QMainWin
 		../Qt/5.8/clang_64/bin/moc
 	/Users/henryknowakowski/Qt/5.8/clang_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/Users/henryknowakowski/Qt/5.8/clang_64/mkspecs/macx-clang -I/Users/henryknowakowski/Projekt2_rozgrzewka2 -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtGui.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtSql.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtNetwork.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtCore.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/8.1.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/usr/include -F/Users/henryknowakowski/Qt/5.8/clang_64/lib sign_window.h -o moc_sign_window.cpp
 
+moc_dragndrop.cpp: ../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QWidget \
+		../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
+		dragndrop.h \
+		moc_predefs.h \
+		../Qt/5.8/clang_64/bin/moc
+	/Users/henryknowakowski/Qt/5.8/clang_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/Users/henryknowakowski/Qt/5.8/clang_64/mkspecs/macx-clang -I/Users/henryknowakowski/Projekt2_rozgrzewka2 -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtGui.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtSql.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtNetwork.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtCore.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/8.1.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/usr/include -F/Users/henryknowakowski/Qt/5.8/clang_64/lib dragndrop.h -o moc_dragndrop.cpp
+
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_welcome_window.h ui_sign_window.h ui_log_window.h ui_player_window.h
+compiler_uic_make_all: ui_welcome_window.h ui_sign_window.h ui_log_window.h ui_player_window.h ui_dragndrop.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_welcome_window.h ui_sign_window.h ui_log_window.h ui_player_window.h
+	-$(DEL_FILE) ui_welcome_window.h ui_sign_window.h ui_log_window.h ui_player_window.h ui_dragndrop.h
 ui_welcome_window.h: welcome_window.ui \
 		../Qt/5.8/clang_64/bin/uic
 	/Users/henryknowakowski/Qt/5.8/clang_64/bin/uic welcome_window.ui -o ui_welcome_window.h
@@ -812,6 +832,10 @@ ui_log_window.h: log_window.ui \
 ui_player_window.h: player_window.ui \
 		../Qt/5.8/clang_64/bin/uic
 	/Users/henryknowakowski/Qt/5.8/clang_64/bin/uic player_window.ui -o ui_player_window.h
+
+ui_dragndrop.h: dragndrop.ui \
+		../Qt/5.8/clang_64/bin/uic
+	/Users/henryknowakowski/Qt/5.8/clang_64/bin/uic dragndrop.ui -o ui_dragndrop.h
 
 compiler_rez_source_make_all:
 compiler_rez_source_clean:
@@ -855,6 +879,9 @@ main.o: main.cpp welcome_window.h \
 		player_window.h \
 		../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/QMediaPlayer \
 		../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediaplayer.h \
+		dragndrop.h \
+		../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QWidget \
+		../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
 		../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QApplication \
 		../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qapplication.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o main.cpp
@@ -889,6 +916,9 @@ welcome_window.o: welcome_window.cpp welcome_window.h \
 		player_window.h \
 		../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/QMediaPlayer \
 		../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediaplayer.h \
+		dragndrop.h \
+		../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QWidget \
+		../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
 		ui_welcome_window.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o welcome_window.o welcome_window.cpp
 
@@ -958,6 +988,12 @@ player_window.o: player_window.cpp player_window.h \
 		ui_player_window.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o player_window.o player_window.cpp
 
+dragndrop.o: dragndrop.cpp dragndrop.h \
+		../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QWidget \
+		../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
+		ui_dragndrop.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o dragndrop.o dragndrop.cpp
+
 moc_welcome_window.o: moc_welcome_window.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_welcome_window.o moc_welcome_window.cpp
 
@@ -969,6 +1005,9 @@ moc_player_window.o: moc_player_window.cpp
 
 moc_sign_window.o: moc_sign_window.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_sign_window.o moc_sign_window.cpp
+
+moc_dragndrop.o: moc_dragndrop.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_dragndrop.o moc_dragndrop.cpp
 
 ####### Install
 

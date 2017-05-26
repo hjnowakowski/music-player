@@ -36,6 +36,7 @@ public:
     QPushButton *button_signin;
     QPushButton *Quit;
     QPushButton *pushButton_player;
+    QPushButton *pushButton_dragndrop;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -71,7 +72,10 @@ public:
         Quit->setCursor(QCursor(Qt::ArrowCursor));
         pushButton_player = new QPushButton(groupBox);
         pushButton_player->setObjectName(QStringLiteral("pushButton_player"));
-        pushButton_player->setGeometry(QRect(80, 240, 191, 71));
+        pushButton_player->setGeometry(QRect(110, 150, 191, 71));
+        pushButton_dragndrop = new QPushButton(groupBox);
+        pushButton_dragndrop->setObjectName(QStringLiteral("pushButton_dragndrop"));
+        pushButton_dragndrop->setGeometry(QRect(110, 240, 191, 71));
 
         horizontalLayout->addWidget(groupBox);
 
@@ -98,6 +102,7 @@ public:
         button_signin->setText(QApplication::translate("welcome_window", "sign in", Q_NULLPTR));
         Quit->setText(QApplication::translate("welcome_window", "Zako\305\204cz", Q_NULLPTR));
         pushButton_player->setText(QApplication::translate("welcome_window", "Przej\305\233cie do playera (test)", Q_NULLPTR));
+        pushButton_dragndrop->setText(QApplication::translate("welcome_window", "Przej\305\233cie do drag and drop", Q_NULLPTR));
     } // retranslateUi
 
 };

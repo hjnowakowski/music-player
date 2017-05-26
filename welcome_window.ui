@@ -80,14 +80,27 @@
       <widget class="QPushButton" name="pushButton_player">
        <property name="geometry">
         <rect>
-         <x>80</x>
-         <y>240</y>
+         <x>110</x>
+         <y>150</y>
          <width>191</width>
          <height>71</height>
         </rect>
        </property>
        <property name="text">
         <string>Przejście do playera (test)</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_dragndrop">
+       <property name="geometry">
+        <rect>
+         <x>110</x>
+         <y>240</y>
+         <width>191</width>
+         <height>71</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Przejście do drag and drop</string>
        </property>
       </widget>
      </widget>

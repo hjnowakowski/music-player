@@ -2,6 +2,7 @@
 #include "ui_welcome_window.h"
 #include "sign_window.h"
 #include "log_window.h"
+#include "drag_n_drop.h"
 
 
 
@@ -39,7 +40,16 @@ void welcome_window::on_button_signin_clicked()
 
 void welcome_window::on_pushButton_player_clicked()
 {
-    hide();
+    //hide();
     playerwindow = new player_window(this);
     playerwindow->show();
+}
+
+
+
+void welcome_window::on_pushButton_dragndrop_clicked()
+{
+    hide();
+    drag_drop = new drag_n_drop(this);
+    drag_drop->show();
 }
