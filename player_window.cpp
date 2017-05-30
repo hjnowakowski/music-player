@@ -53,3 +53,9 @@ void player_window::on_durationChanged(qint64 position)
 {
         ui->horizontalSlider_progress->setMaximum(position);
 }
+
+void player_window::on_pushButton_3_clicked()
+{
+    std::cout << "Push button pressed" << std::endl;
+
+}

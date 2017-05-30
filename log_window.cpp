@@ -1,5 +1,5 @@
 #include "log_window.h"
-#include "ui_mainwindow.h"
+#include "ui_log_window.h"
 #include <QMessageBox>
 #include <ctime>
 #include <iostream>

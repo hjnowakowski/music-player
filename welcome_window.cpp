@@ -40,7 +40,7 @@ void welcome_window::on_button_signin_clicked()
 
 void welcome_window::on_pushButton_player_clicked()
 {
-    //hide();
+    hide();
     playerwindow = new player_window(this);
     playerwindow->show();
 }

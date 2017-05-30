@@ -43,6 +43,7 @@ public:
     QPushButton *pushButton_2;
     QListView *listView;
     QTreeWidget *treeWidget;
+    QPushButton *pushButton_3;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -97,6 +98,9 @@ public:
         treeWidget->setHeaderItem(__qtreewidgetitem);
         treeWidget->setObjectName(QStringLiteral("treeWidget"));
         treeWidget->setGeometry(QRect(20, 80, 201, 281));
+        pushButton_3 = new QPushButton(centralwidget);
+        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
+        pushButton_3->setGeometry(QRect(150, 410, 80, 24));
         player_window->setCentralWidget(centralwidget);
         menubar = new QMenuBar(player_window);
         menubar->setObjectName(QStringLiteral("menubar"));
@@ -119,6 +123,7 @@ public:
         label_2->setText(QApplication::translate("player_window", "Volume", Q_NULLPTR));
         pushButton->setText(QApplication::translate("player_window", "Start", Q_NULLPTR));
         pushButton_2->setText(QApplication::translate("player_window", "Stop", Q_NULLPTR));
+        pushButton_3->setText(QApplication::translate("player_window", "PushButton", Q_NULLPTR));
     } // retranslateUi
 
 };
