@@ -7,6 +7,8 @@
 #include <QtSql>
 #include <QCalendarWidget>
 #include <iostream>
+#include "player_window.h"
+
 
 
 namespace Ui {
@@ -27,7 +29,9 @@ private slots:
 private:
     Ui::signingWindow *ui;
     QSqlDatabase users_db;
-    QCalendarWidget *calendar;
+    QCalendarWidget *calendar; //TODO: usunąć
+    player_window *playerwindow;
+
 };
 
 #endif // SIGNINGWINDOW_H

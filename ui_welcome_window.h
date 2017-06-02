@@ -35,8 +35,6 @@ public:
     QPushButton *button_login;
     QPushButton *button_signin;
     QPushButton *Quit;
-    QPushButton *pushButton_player;
-    QPushButton *pushButton_dragndrop;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -44,7 +42,7 @@ public:
     {
         if (welcome_window->objectName().isEmpty())
             welcome_window->setObjectName(QStringLiteral("welcome_window"));
-        welcome_window->resize(800, 600);
+        welcome_window->resize(799, 598);
         centralwidget = new QWidget(welcome_window);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         horizontalLayout = new QHBoxLayout(centralwidget);
@@ -62,27 +60,21 @@ public:
         groupBox->setObjectName(QStringLiteral("groupBox"));
         button_login = new QPushButton(groupBox);
         button_login->setObjectName(QStringLiteral("button_login"));
-        button_login->setGeometry(QRect(60, 70, 80, 24));
+        button_login->setGeometry(QRect(40, 70, 121, 61));
         button_signin = new QPushButton(groupBox);
         button_signin->setObjectName(QStringLiteral("button_signin"));
-        button_signin->setGeometry(QRect(230, 70, 80, 24));
+        button_signin->setGeometry(QRect(220, 70, 121, 61));
         Quit = new QPushButton(groupBox);
         Quit->setObjectName(QStringLiteral("Quit"));
         Quit->setGeometry(QRect(270, 480, 91, 31));
         Quit->setCursor(QCursor(Qt::ArrowCursor));
-        pushButton_player = new QPushButton(groupBox);
-        pushButton_player->setObjectName(QStringLiteral("pushButton_player"));
-        pushButton_player->setGeometry(QRect(110, 150, 191, 71));
-        pushButton_dragndrop = new QPushButton(groupBox);
-        pushButton_dragndrop->setObjectName(QStringLiteral("pushButton_dragndrop"));
-        pushButton_dragndrop->setGeometry(QRect(110, 240, 191, 71));
 
         horizontalLayout->addWidget(groupBox);
 
         welcome_window->setCentralWidget(centralwidget);
         menubar = new QMenuBar(welcome_window);
         menubar->setObjectName(QStringLiteral("menubar"));
-        menubar->setGeometry(QRect(0, 0, 800, 22));
+        menubar->setGeometry(QRect(0, 0, 799, 22));
         welcome_window->setMenuBar(menubar);
         statusbar = new QStatusBar(welcome_window);
         statusbar->setObjectName(QStringLiteral("statusbar"));
@@ -95,14 +87,12 @@ public:
 
     void retranslateUi(QMainWindow *welcome_window)
     {
-        welcome_window->setWindowTitle(QApplication::translate("welcome_window", "Welcome!", Q_NULLPTR));
+        welcome_window->setWindowTitle(QApplication::translate("welcome_window", "Welcome window | Music Player", Q_NULLPTR));
         label_welcome->setText(QApplication::translate("welcome_window", "Welcome", Q_NULLPTR));
         groupBox->setTitle(QString());
         button_login->setText(QApplication::translate("welcome_window", "log in", Q_NULLPTR));
         button_signin->setText(QApplication::translate("welcome_window", "sign in", Q_NULLPTR));
         Quit->setText(QApplication::translate("welcome_window", "Zako\305\204cz", Q_NULLPTR));
-        pushButton_player->setText(QApplication::translate("welcome_window", "Przej\305\233cie do playera (test)", Q_NULLPTR));
-        pushButton_dragndrop->setText(QApplication::translate("welcome_window", "Przej\305\233cie do drag and drop", Q_NULLPTR));
     } // retranslateUi
 
 };

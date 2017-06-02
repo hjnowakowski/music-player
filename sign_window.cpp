@@ -1,6 +1,7 @@
 #include "sign_window.h"
 #include "ui_sign_window.h"
 #include <QMessageBox>
+#include "global.h"
 
 
 
@@ -76,7 +77,11 @@ void signingWindow::on_pushButton_signin_clicked()
             qry.bindValue(":password", password);
             qry.exec();
 
-            //TODO zaakceptowane wartości muszą iść "dalej" do playera, może zrobić je jakoś publicznymi
+            g_username = username;
+            hide();
+            playerwindow = new player_window(this);
+            playerwindow->show();
+
         }
     }
     else QMessageBox::warning(this, "Error with finding data in users.db: ", qry.lastError().text()+"Error code: "+qry.lastError().number());
