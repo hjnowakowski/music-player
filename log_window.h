@@ -8,6 +8,7 @@
 #include <ctime>
 #include <iostream>
 #include <string>
+#include "player_window.h"
 
 
 
@@ -33,6 +34,8 @@ private slots:
 private:
     Ui::MainWindow *ui;
     QSqlDatabase users_db;
+    player_window *playerwindow;
+
 };
 
 #endif // MAINWINDOW_H

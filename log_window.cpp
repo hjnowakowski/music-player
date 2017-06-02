@@ -4,6 +4,7 @@
 #include <ctime>
 #include <iostream>
 #include <string>
+#include "global.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -52,6 +53,9 @@ void MainWindow::on_pushButton_Login_clicked()
     QString username = ui->lineEdit_username->text();
     QString password = ui->lineEdit_password->text();
 
+    ui->label_data->setText(year1+'-' + mon1+'-' + day1);  //chwilowo
+
+
 
 
     if(!users_db.isOpen()){
@@ -70,12 +74,16 @@ void MainWindow::on_pushButton_Login_clicked()
         if(count==1){
             ui->label_status->setText("username and password are correct!😺");
               //TODO zaakceptowane wartości muszą iść "dalej" do playera, może zrobić je jakoś publicznymi
+            g_username = username;
+            hide();
+            playerwindow = new player_window(this);
+            playerwindow->show();
+
         }
 
         if(count>1)
             ui->label_status->setText("duplicate username and password!😾");
         if(count<1)
-            //ui->label_status->setText("username and password are not correct!😿");
-            ui->label_status->setText(year1+'-' + mon1+'-' + day1);  //chwilowo
+            ui->label_status->setText("username and password are not correct!😿");
     }    
 }

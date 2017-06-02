@@ -5,6 +5,7 @@
 #include <iostream>
 #include <QFileInfo>
 #include <string>
+#include "global.h"
 
 
 drag_n_drop::drag_n_drop(QWidget *parent) :
@@ -51,10 +52,11 @@ void drag_n_drop::dropEvent(QDropEvent * event){
     QList<QUrl>::Iterator i;
     urls = event->mimeData()->urls();
     for ( i = urls.begin(); i != urls.end(); ++i){
-
-        nameArch = i->path();
+        g_some_string = i->path();
+        nameArch = i->fileName();
         ui->listWidget->addItem(nameArch);
     }
+
 }
 
 void drag_n_drop::on_pushButton_open_clicked()

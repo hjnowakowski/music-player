@@ -12,10 +12,10 @@ MAKEFILE      = Makefile
 
 CC            = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang
 CXX           = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
-DEFINES       = -DQT_DEPRECATED_WARNINGS -DQT_QML_DEBUG -DQT_MULTIMEDIA_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_SQL_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB
+DEFINES       = -DQT_DEPRECATED_WARNINGS -DQT_QML_DEBUG -DQT_MULTIMEDIA_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_SQL_LIB -DQT_NETWORK_LIB -DQT_TESTLIB_LIB -DQT_CORE_LIB -DQT_TESTCASE_BUILDDIR='"/Users/henryknowakowski/projekt/projekt1"'
 CFLAGS        = -pipe -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk -mmacosx-version-min=10.9 $(EXPORT_QMAKE_XARCH_CFLAGS) -g -Wall -W -fPIC $(DEFINES)
 CXXFLAGS      = -pipe -stdlib=libc++ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk -mmacosx-version-min=10.9 $(EXPORT_QMAKE_XARCH_CFLAGS) -g -std=gnu++11 -Wall -W -fPIC $(DEFINES)
-INCPATH       = -I. -I../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers -I../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers -I../../Qt/5.8/clang_64/lib/QtGui.framework/Headers -I../../Qt/5.8/clang_64/lib/QtSql.framework/Headers -I../../Qt/5.8/clang_64/lib/QtNetwork.framework/Headers -I../../Qt/5.8/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/OpenGL.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AGL.framework/Headers -I. -I../../Qt/5.8/clang_64/mkspecs/macx-clang -F/Users/henryknowakowski/Qt/5.8/clang_64/lib
+INCPATH       = -I. -I../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers -I../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers -I../../Qt/5.8/clang_64/lib/QtGui.framework/Headers -I../../Qt/5.8/clang_64/lib/QtSql.framework/Headers -I../../Qt/5.8/clang_64/lib/QtNetwork.framework/Headers -I../../Qt/5.8/clang_64/lib/QtTest.framework/Headers -I../../Qt/5.8/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/OpenGL.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AGL.framework/Headers -I. -I../../Qt/5.8/clang_64/mkspecs/macx-clang -F/Users/henryknowakowski/Qt/5.8/clang_64/lib
 QMAKE         = /Users/henryknowakowski/Qt/5.8/clang_64/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -36,7 +36,7 @@ DISTNAME      = projekt1_rozgrzewka11.0.0
 DISTDIR = /Users/henryknowakowski/projekt/projekt1/.tmp/projekt1_rozgrzewka11.0.0
 LINK          = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
 LFLAGS        = -headerpad_max_install_names -stdlib=libc++ -Wl,-syslibroot,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk -mmacosx-version-min=10.9 $(EXPORT_QMAKE_XARCH_LFLAGS) -Wl,-rpath,/Users/henryknowakowski/Qt/5.8/clang_64/lib
-LIBS          = $(SUBLIBS) -F/Users/henryknowakowski/Qt/5.8/clang_64/lib -framework QtMultimedia -framework QtNetwork -framework QtCore -framework DiskArbitration -framework IOKit -framework QtGui -framework QtWidgets -framework QtSql -framework OpenGL -framework AGL 
+LIBS          = $(SUBLIBS) -F/Users/henryknowakowski/Qt/5.8/clang_64/lib -framework QtMultimedia -framework QtNetwork -framework QtCore -framework DiskArbitration -framework IOKit -framework QtGui -framework QtWidgets -framework QtSql -framework QtTest -framework Security -framework Foundation -framework ApplicationServices -framework OpenGL -framework AGL 
 AR            = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar cq
 RANLIB        = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib -s
 SED           = sed
@@ -54,7 +54,8 @@ SOURCES       = main.cpp \
 		sign_window.cpp \
 		player_window.cpp \
 		dragndrop.cpp \
-		drag_n_drop.cpp moc_welcome_window.cpp \
+		drag_n_drop.cpp \
+		global.cpp moc_welcome_window.cpp \
 		moc_log_window.cpp \
 		moc_player_window.cpp \
 		moc_sign_window.cpp \
@@ -67,6 +68,7 @@ OBJECTS       = main.o \
 		player_window.o \
 		dragndrop.o \
 		drag_n_drop.o \
+		global.o \
 		moc_welcome_window.o \
 		moc_log_window.o \
 		moc_player_window.o \
@@ -238,6 +240,7 @@ DIST          = ../../Qt/5.8/clang_64/mkspecs/features/spec_pre.prf \
 		../../Qt/5.8/clang_64/mkspecs/features/qt.prf \
 		../../Qt/5.8/clang_64/mkspecs/features/resources.prf \
 		../../Qt/5.8/clang_64/mkspecs/features/moc.prf \
+		../../Qt/5.8/clang_64/mkspecs/features/testlib_defines.prf \
 		../../Qt/5.8/clang_64/mkspecs/features/unix/opengl.prf \
 		../../Qt/5.8/clang_64/mkspecs/features/uic.prf \
 		../../Qt/5.8/clang_64/mkspecs/features/unix/thread.prf \
@@ -254,13 +257,15 @@ DIST          = ../../Qt/5.8/clang_64/mkspecs/features/spec_pre.prf \
 		player_window.h \
 		sign_window.h \
 		dragndrop.h \
-		drag_n_drop.h main.cpp \
+		drag_n_drop.h \
+		global.h main.cpp \
 		welcome_window.cpp \
 		log_window.cpp \
 		sign_window.cpp \
 		player_window.cpp \
 		dragndrop.cpp \
-		drag_n_drop.cpp
+		drag_n_drop.cpp \
+		global.cpp
 QMAKE_TARGET  = projekt1_rozgrzewka1
 DESTDIR       = 
 TARGET        = projekt1_rozgrzewka1.app/Contents/MacOS/projekt1_rozgrzewka1
@@ -438,6 +443,7 @@ Makefile: projekt1_rozgrzewka1.pro ../../Qt/5.8/clang_64/mkspecs/macx-clang/qmak
 		../../Qt/5.8/clang_64/mkspecs/features/qt.prf \
 		../../Qt/5.8/clang_64/mkspecs/features/resources.prf \
 		../../Qt/5.8/clang_64/mkspecs/features/moc.prf \
+		../../Qt/5.8/clang_64/mkspecs/features/testlib_defines.prf \
 		../../Qt/5.8/clang_64/mkspecs/features/unix/opengl.prf \
 		../../Qt/5.8/clang_64/mkspecs/features/uic.prf \
 		../../Qt/5.8/clang_64/mkspecs/features/unix/thread.prf \
@@ -455,6 +461,7 @@ Makefile: projekt1_rozgrzewka1.pro ../../Qt/5.8/clang_64/mkspecs/macx-clang/qmak
 		../../Qt/5.8/clang_64/lib/QtGui.framework/QtGui.prl \
 		../../Qt/5.8/clang_64/lib/QtSql.framework/QtSql.prl \
 		../../Qt/5.8/clang_64/lib/QtNetwork.framework/QtNetwork.prl \
+		../../Qt/5.8/clang_64/lib/QtTest.framework/QtTest.prl \
 		../../Qt/5.8/clang_64/lib/QtCore.framework/QtCore.prl
 	$(QMAKE) -o Makefile projekt1_rozgrzewka1.pro -spec macx-clang CONFIG+=debug CONFIG+=x86_64 CONFIG+=qml_debug
 ../../Qt/5.8/clang_64/mkspecs/features/spec_pre.prf:
@@ -622,6 +629,7 @@ Makefile: projekt1_rozgrzewka1.pro ../../Qt/5.8/clang_64/mkspecs/macx-clang/qmak
 ../../Qt/5.8/clang_64/mkspecs/features/qt.prf:
 ../../Qt/5.8/clang_64/mkspecs/features/resources.prf:
 ../../Qt/5.8/clang_64/mkspecs/features/moc.prf:
+../../Qt/5.8/clang_64/mkspecs/features/testlib_defines.prf:
 ../../Qt/5.8/clang_64/mkspecs/features/unix/opengl.prf:
 ../../Qt/5.8/clang_64/mkspecs/features/uic.prf:
 ../../Qt/5.8/clang_64/mkspecs/features/unix/thread.prf:
@@ -639,6 +647,7 @@ projekt1_rozgrzewka1.pro:
 ../../Qt/5.8/clang_64/lib/QtGui.framework/QtGui.prl:
 ../../Qt/5.8/clang_64/lib/QtSql.framework/QtSql.prl:
 ../../Qt/5.8/clang_64/lib/QtNetwork.framework/QtNetwork.prl:
+../../Qt/5.8/clang_64/lib/QtTest.framework/QtTest.prl:
 ../../Qt/5.8/clang_64/lib/QtCore.framework/QtCore.prl:
 qmake: FORCE
 	@$(QMAKE) -o Makefile projekt1_rozgrzewka1.pro -spec macx-clang CONFIG+=debug CONFIG+=x86_64 CONFIG+=qml_debug
@@ -670,8 +679,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../../Qt/5.8/clang_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents welcome_window.h log_window.h player_window.h sign_window.h dragndrop.h drag_n_drop.h $(DISTDIR)/
-	$(COPY_FILE) --parents main.cpp welcome_window.cpp log_window.cpp sign_window.cpp player_window.cpp dragndrop.cpp drag_n_drop.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents welcome_window.h log_window.h player_window.h sign_window.h dragndrop.h drag_n_drop.h global.h $(DISTDIR)/
+	$(COPY_FILE) --parents main.cpp welcome_window.cpp log_window.cpp sign_window.cpp player_window.cpp dragndrop.cpp drag_n_drop.cpp global.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents welcome_window.ui sign_window.ui log_window.ui player_window.ui dragndrop.ui drag_n_drop.ui $(DISTDIR)/
 
 
@@ -736,11 +745,13 @@ moc_welcome_window.cpp: ../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QM
 		player_window.h \
 		../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/QMediaPlayer \
 		../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediaplayer.h \
+		../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/QMediaMetaData \
+		../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediametadata.h \
 		drag_n_drop.h \
 		welcome_window.h \
 		moc_predefs.h \
 		../../Qt/5.8/clang_64/bin/moc
-	/Users/henryknowakowski/Qt/5.8/clang_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/Users/henryknowakowski/Qt/5.8/clang_64/mkspecs/macx-clang -I/Users/henryknowakowski/projekt/projekt1 -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtGui.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtSql.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtNetwork.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtCore.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/8.1.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/usr/include -F/Users/henryknowakowski/Qt/5.8/clang_64/lib welcome_window.h -o moc_welcome_window.cpp
+	/Users/henryknowakowski/Qt/5.8/clang_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/Users/henryknowakowski/Qt/5.8/clang_64/mkspecs/macx-clang -I/Users/henryknowakowski/projekt/projekt1 -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtGui.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtSql.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtNetwork.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtTest.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtCore.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/8.1.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/usr/include -F/Users/henryknowakowski/Qt/5.8/clang_64/lib welcome_window.h -o moc_welcome_window.cpp
 
 moc_log_window.cpp: ../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
@@ -767,7 +778,7 @@ moc_log_window.cpp: ../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QMainW
 		log_window.h \
 		moc_predefs.h \
 		../../Qt/5.8/clang_64/bin/moc
-	/Users/henryknowakowski/Qt/5.8/clang_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/Users/henryknowakowski/Qt/5.8/clang_64/mkspecs/macx-clang -I/Users/henryknowakowski/projekt/projekt1 -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtGui.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtSql.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtNetwork.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtCore.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/8.1.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/usr/include -F/Users/henryknowakowski/Qt/5.8/clang_64/lib log_window.h -o moc_log_window.cpp
+	/Users/henryknowakowski/Qt/5.8/clang_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/Users/henryknowakowski/Qt/5.8/clang_64/mkspecs/macx-clang -I/Users/henryknowakowski/projekt/projekt1 -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtGui.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtSql.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtNetwork.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtTest.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtCore.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/8.1.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/usr/include -F/Users/henryknowakowski/Qt/5.8/clang_64/lib log_window.h -o moc_log_window.cpp
 
 moc_player_window.cpp: ../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
@@ -775,10 +786,12 @@ moc_player_window.cpp: ../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QMa
 		../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediaplayer.h \
 		../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/QDebug \
 		../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/qdebug.h \
+		../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/QMediaMetaData \
+		../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediametadata.h \
 		player_window.h \
 		moc_predefs.h \
 		../../Qt/5.8/clang_64/bin/moc
-	/Users/henryknowakowski/Qt/5.8/clang_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/Users/henryknowakowski/Qt/5.8/clang_64/mkspecs/macx-clang -I/Users/henryknowakowski/projekt/projekt1 -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtGui.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtSql.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtNetwork.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtCore.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/8.1.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/usr/include -F/Users/henryknowakowski/Qt/5.8/clang_64/lib player_window.h -o moc_player_window.cpp
+	/Users/henryknowakowski/Qt/5.8/clang_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/Users/henryknowakowski/Qt/5.8/clang_64/mkspecs/macx-clang -I/Users/henryknowakowski/projekt/projekt1 -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtGui.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtSql.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtNetwork.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtTest.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtCore.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/8.1.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/usr/include -F/Users/henryknowakowski/Qt/5.8/clang_64/lib player_window.h -o moc_player_window.cpp
 
 moc_sign_window.cpp: ../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
@@ -807,21 +820,21 @@ moc_sign_window.cpp: ../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QMain
 		sign_window.h \
 		moc_predefs.h \
 		../../Qt/5.8/clang_64/bin/moc
-	/Users/henryknowakowski/Qt/5.8/clang_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/Users/henryknowakowski/Qt/5.8/clang_64/mkspecs/macx-clang -I/Users/henryknowakowski/projekt/projekt1 -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtGui.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtSql.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtNetwork.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtCore.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/8.1.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/usr/include -F/Users/henryknowakowski/Qt/5.8/clang_64/lib sign_window.h -o moc_sign_window.cpp
+	/Users/henryknowakowski/Qt/5.8/clang_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/Users/henryknowakowski/Qt/5.8/clang_64/mkspecs/macx-clang -I/Users/henryknowakowski/projekt/projekt1 -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtGui.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtSql.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtNetwork.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtTest.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtCore.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/8.1.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/usr/include -F/Users/henryknowakowski/Qt/5.8/clang_64/lib sign_window.h -o moc_sign_window.cpp
 
 moc_dragndrop.cpp: ../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QWidget \
 		../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
 		dragndrop.h \
 		moc_predefs.h \
 		../../Qt/5.8/clang_64/bin/moc
-	/Users/henryknowakowski/Qt/5.8/clang_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/Users/henryknowakowski/Qt/5.8/clang_64/mkspecs/macx-clang -I/Users/henryknowakowski/projekt/projekt1 -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtGui.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtSql.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtNetwork.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtCore.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/8.1.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/usr/include -F/Users/henryknowakowski/Qt/5.8/clang_64/lib dragndrop.h -o moc_dragndrop.cpp
+	/Users/henryknowakowski/Qt/5.8/clang_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/Users/henryknowakowski/Qt/5.8/clang_64/mkspecs/macx-clang -I/Users/henryknowakowski/projekt/projekt1 -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtGui.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtSql.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtNetwork.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtTest.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtCore.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/8.1.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/usr/include -F/Users/henryknowakowski/Qt/5.8/clang_64/lib dragndrop.h -o moc_dragndrop.cpp
 
 moc_drag_n_drop.cpp: ../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
 		drag_n_drop.h \
 		moc_predefs.h \
 		../../Qt/5.8/clang_64/bin/moc
-	/Users/henryknowakowski/Qt/5.8/clang_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/Users/henryknowakowski/Qt/5.8/clang_64/mkspecs/macx-clang -I/Users/henryknowakowski/projekt/projekt1 -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtGui.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtSql.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtNetwork.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtCore.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/8.1.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/usr/include -F/Users/henryknowakowski/Qt/5.8/clang_64/lib drag_n_drop.h -o moc_drag_n_drop.cpp
+	/Users/henryknowakowski/Qt/5.8/clang_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/Users/henryknowakowski/Qt/5.8/clang_64/mkspecs/macx-clang -I/Users/henryknowakowski/projekt/projekt1 -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtGui.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtSql.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtNetwork.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtTest.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtCore.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/8.1.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/usr/include -F/Users/henryknowakowski/Qt/5.8/clang_64/lib drag_n_drop.h -o moc_drag_n_drop.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -894,6 +907,8 @@ main.o: main.cpp welcome_window.h \
 		player_window.h \
 		../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/QMediaPlayer \
 		../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediaplayer.h \
+		../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/QMediaMetaData \
+		../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediametadata.h \
 		drag_n_drop.h \
 		../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QApplication \
 		../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qapplication.h
@@ -929,6 +944,8 @@ welcome_window.o: welcome_window.cpp welcome_window.h \
 		player_window.h \
 		../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/QMediaPlayer \
 		../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediaplayer.h \
+		../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/QMediaMetaData \
+		../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediametadata.h \
 		drag_n_drop.h \
 		ui_welcome_window.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o welcome_window.o welcome_window.cpp
@@ -956,6 +973,7 @@ log_window.o: log_window.cpp log_window.h \
 		../../Qt/5.8/clang_64/lib/QtSql.framework/Headers/qsqlresult.h \
 		../../Qt/5.8/clang_64/lib/QtSql.framework/Headers/qsqltablemodel.h \
 		../../Qt/5.8/clang_64/lib/QtSql.framework/Headers/qtsqlversion.h \
+		ui_log_window.h \
 		../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QMessageBox \
 		../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o log_window.o log_window.cpp
@@ -985,6 +1003,7 @@ sign_window.o: sign_window.cpp sign_window.h \
 		../../Qt/5.8/clang_64/lib/QtSql.framework/Headers/qtsqlversion.h \
 		../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QCalendarWidget \
 		../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qcalendarwidget.h \
+		ui_sign_window.h \
 		../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QMessageBox \
 		../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o sign_window.o sign_window.cpp
@@ -996,7 +1015,32 @@ player_window.o: player_window.cpp player_window.h \
 		../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediaplayer.h \
 		../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/QDebug \
 		../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/qdebug.h \
-		ui_player_window.h
+		../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/QMediaMetaData \
+		../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediametadata.h \
+		ui_player_window.h \
+		global.h \
+		../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/QString \
+		../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		3rdparty/taglib/1.11.1/include/taglib/fileref.h \
+		3rdparty/taglib/1.11.1/include/taglib/tfile.h \
+		3rdparty/taglib/1.11.1/include/taglib/taglib_export.h \
+		3rdparty/taglib/1.11.1/include/taglib/taglib.h \
+		3rdparty/taglib/1.11.1/include/taglib/taglib_config.h \
+		3rdparty/taglib/1.11.1/include/taglib/tag.h \
+		3rdparty/taglib/1.11.1/include/taglib/tstring.h \
+		3rdparty/taglib/1.11.1/include/taglib/tbytevector.h \
+		3rdparty/taglib/1.11.1/include/taglib/tiostream.h \
+		3rdparty/taglib/1.11.1/include/taglib/tstringlist.h \
+		3rdparty/taglib/1.11.1/include/taglib/tlist.h \
+		3rdparty/taglib/1.11.1/include/taglib/tlist.tcc \
+		3rdparty/taglib/1.11.1/include/taglib/trefcounter.h \
+		3rdparty/taglib/1.11.1/include/taglib/tbytevectorlist.h \
+		3rdparty/taglib/1.11.1/include/taglib/audioproperties.h \
+		3rdparty/taglib/1.11.1/include/taglib/tpropertymap.h \
+		3rdparty/taglib/1.11.1/include/taglib/tmap.h \
+		3rdparty/taglib/1.11.1/include/taglib/tmap.tcc \
+		../../Qt/5.8/clang_64/lib/QtTest.framework/Headers/QTest \
+		../../Qt/5.8/clang_64/lib/QtTest.framework/Headers/qtest.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o player_window.o player_window.cpp
 
 dragndrop.o: dragndrop.cpp dragndrop.h \
@@ -1014,8 +1058,16 @@ drag_n_drop.o: drag_n_drop.cpp drag_n_drop.h \
 		../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/QMimeData \
 		../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/qmimedata.h \
 		../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/QFileInfo \
-		../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/qfileinfo.h
+		../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/qfileinfo.h \
+		global.h \
+		../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/QString \
+		../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/qstring.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o drag_n_drop.o drag_n_drop.cpp
+
+global.o: global.cpp global.h \
+		../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/QString \
+		../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/qstring.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o global.o global.cpp
 
 moc_welcome_window.o: moc_welcome_window.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_welcome_window.o moc_welcome_window.cpp

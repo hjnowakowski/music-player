@@ -49,7 +49,6 @@ void welcome_window::on_pushButton_player_clicked()
 
 void welcome_window::on_pushButton_dragndrop_clicked()
 {
-    hide();
     drag_drop = new drag_n_drop(this);
     drag_drop->show();
 }

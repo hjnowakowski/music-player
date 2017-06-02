@@ -43,6 +43,7 @@ public:
     QLineEdit *lineEdit_password;
     QPushButton *pushButton_Login;
     QLabel *label_status;
+    QLabel *label_data;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -105,9 +106,12 @@ public:
 
         label_status = new QLabel(centralWidget);
         label_status->setObjectName(QStringLiteral("label_status"));
-        label_status->setGeometry(QRect(10, 500, 321, 16));
+        label_status->setGeometry(QRect(20, 470, 321, 16));
         label_status->setFrameShape(QFrame::Box);
         label_status->setFrameShadow(QFrame::Raised);
+        label_data = new QLabel(centralWidget);
+        label_data->setObjectName(QStringLiteral("label_data"));
+        label_data->setGeometry(QRect(20, 440, 251, 16));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -136,6 +140,7 @@ public:
         label_passwd->setText(QApplication::translate("MainWindow", "Password", Q_NULLPTR));
         pushButton_Login->setText(QApplication::translate("MainWindow", "Login", Q_NULLPTR));
         label_status->setText(QApplication::translate("MainWindow", "[+]Status", Q_NULLPTR));
+        label_data->setText(QApplication::translate("MainWindow", "data", Q_NULLPTR));
     } // retranslateUi
 
 };
