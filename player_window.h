@@ -48,6 +48,10 @@ private slots:
 
     void on_pushButton_5_clicked();
 
+    void on_pushButton_pause_clicked();
+
+    void on_pushButton_6_clicked();
+
 private:
     Ui::player_window *ui;
     QMediaPlayer* player;

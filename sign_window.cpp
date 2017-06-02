@@ -41,6 +41,11 @@ void signingWindow::on_pushButton_signin_clicked()
     QString name = ui->lineEdit_name->text();
     QString age = ui->spinBox_age->text();
 
+    if(password.length()<3){
+        ui->label_status->setText("Hasło musi mieć min 3 znaki😺");
+        return;
+    }
+
 
 
     if(!users_db.isOpen()){

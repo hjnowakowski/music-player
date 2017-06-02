@@ -84,6 +84,12 @@ void MainWindow::on_pushButton_Login_clicked()
         if(count>1)
             ui->label_status->setText("duplicate username and password!😾");
         if(count<1)
-            ui->label_status->setText("username and password are not correct!😿");
+            ui->label_status->setText("Wrong username or password!😿");
     }    
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+    return;
+
 }

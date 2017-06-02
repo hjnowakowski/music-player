@@ -2,11 +2,7 @@
 #include "ui_player_window.h"
 #include <iostream>
 #include "global.h"
-#include <3rdparty/taglib/1.11.1/include/taglib/fileref.h>
-#include <3rdparty/taglib/1.11.1/include/taglib/tag.h>
-#include <3rdparty/taglib/1.11.1/include/taglib/tpropertymap.h>
 #include <QMediaMetaData>
-#include <QTest>
 #include <string>
 #include <QDragEnterEvent>
 #include <QMimeData>
@@ -66,11 +62,11 @@ void player_window::on_pushButton_clicked()
     player->play();
 
 
+
     std::string a;
 
     std::cout << player->metaData(QMediaMetaData::MediaType).toString().toStdString() << std::endl;
 
-    //QTest::qSleep ( 30000 );
     qDebug() << player->errorString();
 
 
@@ -99,16 +95,8 @@ void player_window::on_pushButton_2_clicked()
     ui->label_3->setText(player->metaData(QMediaMetaData::MediaType).toString());
     //qDebug() << player->metaData(QMediaMetaData::Genre).toString();
 
-    std::cout << "Stop button pressed" << std::endl;
+    std::cout << "song info button pressed" << std::endl;
 
-
-
-//     QStringList genre = player->metaData("Genere").toStringList();
-
-//     for (QStringList::Iterator S =  genre.begin(); S != genre.end(); S++)
-//           {
-//                 ui->label_3->setText(*S);
-//           }
 }
 
 void player_window::on_positionChanged(qint64 position)
@@ -120,6 +108,12 @@ void player_window::on_durationChanged(qint64 position)
 {
         ui->horizontalSlider_progress->setMaximum(position);
 }
+
+
+
+//drag n drop:
+
+
 
 void player_window::on_pushButton_3_clicked() //open
 {
@@ -168,4 +162,14 @@ void player_window::dropEvent(QDropEvent *event){
 void player_window::on_pushButton_5_clicked()
 {
     player->stop();
+}
+
+void player_window::on_pushButton_pause_clicked()
+{
+    player->pause();
+}
+
+void player_window::on_pushButton_6_clicked()
+{
+    player->play();
 }

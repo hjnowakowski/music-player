@@ -44,6 +44,7 @@ public:
     QPushButton *pushButton_Login;
     QLabel *label_status;
     QLabel *label_data;
+    QPushButton *pushButton;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -52,12 +53,12 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(800, 600);
+        MainWindow->resize(431, 355);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         Quit = new QPushButton(centralWidget);
         Quit->setObjectName(QStringLiteral("Quit"));
-        Quit->setGeometry(QRect(690, 480, 91, 31));
+        Quit->setGeometry(QRect(320, 250, 91, 31));
         Quit->setCursor(QCursor(Qt::ArrowCursor));
         groupBox = new QGroupBox(centralWidget);
         groupBox->setObjectName(QStringLiteral("groupBox"));
@@ -106,16 +107,19 @@ public:
 
         label_status = new QLabel(centralWidget);
         label_status->setObjectName(QStringLiteral("label_status"));
-        label_status->setGeometry(QRect(20, 470, 321, 16));
+        label_status->setGeometry(QRect(20, 200, 321, 21));
         label_status->setFrameShape(QFrame::Box);
         label_status->setFrameShadow(QFrame::Raised);
         label_data = new QLabel(centralWidget);
         label_data->setObjectName(QStringLiteral("label_data"));
-        label_data->setGeometry(QRect(20, 440, 251, 16));
+        label_data->setGeometry(QRect(20, 180, 251, 16));
+        pushButton = new QPushButton(centralWidget);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setGeometry(QRect(220, 250, 81, 31));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 800, 22));
+        menuBar->setGeometry(QRect(0, 0, 431, 22));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -134,13 +138,14 @@ public:
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", Q_NULLPTR));
         Quit->setText(QApplication::translate("MainWindow", "Zako\305\204cz", Q_NULLPTR));
-        groupBox->setTitle(QApplication::translate("MainWindow", "Sign in", Q_NULLPTR));
+        groupBox->setTitle(QApplication::translate("MainWindow", "Log in", Q_NULLPTR));
         label_username->setText(QApplication::translate("MainWindow", "UserName", Q_NULLPTR));
         lineEdit_username->setText(QString());
         label_passwd->setText(QApplication::translate("MainWindow", "Password", Q_NULLPTR));
         pushButton_Login->setText(QApplication::translate("MainWindow", "Login", Q_NULLPTR));
         label_status->setText(QApplication::translate("MainWindow", "[+]Status", Q_NULLPTR));
         label_data->setText(QApplication::translate("MainWindow", "data", Q_NULLPTR));
+        pushButton->setText(QApplication::translate("MainWindow", "back", Q_NULLPTR));
     } // retranslateUi
 
 };

@@ -741,12 +741,13 @@ moc_welcome_window.cpp: ../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QM
 		../../Qt/5.8/clang_64/lib/QtSql.framework/Headers/qtsqlversion.h \
 		../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QCalendarWidget \
 		../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qcalendarwidget.h \
-		log_window.h \
 		player_window.h \
 		../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/QMediaPlayer \
 		../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediaplayer.h \
 		../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/QMediaMetaData \
 		../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediametadata.h \
+		log_window.h \
+		welcome_window.h \
 		drag_n_drop.h \
 		welcome_window.h \
 		moc_predefs.h \
@@ -775,6 +776,17 @@ moc_log_window.cpp: ../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QMainW
 		../../Qt/5.8/clang_64/lib/QtSql.framework/Headers/qsqlresult.h \
 		../../Qt/5.8/clang_64/lib/QtSql.framework/Headers/qsqltablemodel.h \
 		../../Qt/5.8/clang_64/lib/QtSql.framework/Headers/qtsqlversion.h \
+		player_window.h \
+		../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/QMediaPlayer \
+		../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediaplayer.h \
+		../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/QMediaMetaData \
+		../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediametadata.h \
+		welcome_window.h \
+		sign_window.h \
+		../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QCalendarWidget \
+		../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qcalendarwidget.h \
+		log_window.h \
+		drag_n_drop.h \
 		log_window.h \
 		moc_predefs.h \
 		../../Qt/5.8/clang_64/bin/moc
@@ -817,6 +829,11 @@ moc_sign_window.cpp: ../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QMain
 		../../Qt/5.8/clang_64/lib/QtSql.framework/Headers/qtsqlversion.h \
 		../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QCalendarWidget \
 		../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qcalendarwidget.h \
+		player_window.h \
+		../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/QMediaPlayer \
+		../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediaplayer.h \
+		../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/QMediaMetaData \
+		../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediametadata.h \
 		sign_window.h \
 		moc_predefs.h \
 		../../Qt/5.8/clang_64/bin/moc
@@ -903,12 +920,12 @@ main.o: main.cpp welcome_window.h \
 		../../Qt/5.8/clang_64/lib/QtSql.framework/Headers/qtsqlversion.h \
 		../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QCalendarWidget \
 		../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qcalendarwidget.h \
-		log_window.h \
 		player_window.h \
 		../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/QMediaPlayer \
 		../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediaplayer.h \
 		../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/QMediaMetaData \
 		../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediametadata.h \
+		log_window.h \
 		drag_n_drop.h \
 		../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QApplication \
 		../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qapplication.h
@@ -940,12 +957,12 @@ welcome_window.o: welcome_window.cpp welcome_window.h \
 		../../Qt/5.8/clang_64/lib/QtSql.framework/Headers/qtsqlversion.h \
 		../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QCalendarWidget \
 		../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qcalendarwidget.h \
-		log_window.h \
 		player_window.h \
 		../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/QMediaPlayer \
 		../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediaplayer.h \
 		../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/QMediaMetaData \
 		../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediametadata.h \
+		log_window.h \
 		drag_n_drop.h \
 		ui_welcome_window.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o welcome_window.o welcome_window.cpp
@@ -973,9 +990,22 @@ log_window.o: log_window.cpp log_window.h \
 		../../Qt/5.8/clang_64/lib/QtSql.framework/Headers/qsqlresult.h \
 		../../Qt/5.8/clang_64/lib/QtSql.framework/Headers/qsqltablemodel.h \
 		../../Qt/5.8/clang_64/lib/QtSql.framework/Headers/qtsqlversion.h \
+		player_window.h \
+		../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/QMediaPlayer \
+		../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediaplayer.h \
+		../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/QMediaMetaData \
+		../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediametadata.h \
+		welcome_window.h \
+		sign_window.h \
+		../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QCalendarWidget \
+		../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qcalendarwidget.h \
+		drag_n_drop.h \
 		ui_log_window.h \
 		../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QMessageBox \
-		../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h
+		../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h \
+		global.h \
+		../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/QString \
+		../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/qstring.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o log_window.o log_window.cpp
 
 sign_window.o: sign_window.cpp sign_window.h \
@@ -1003,9 +1033,17 @@ sign_window.o: sign_window.cpp sign_window.h \
 		../../Qt/5.8/clang_64/lib/QtSql.framework/Headers/qtsqlversion.h \
 		../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QCalendarWidget \
 		../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qcalendarwidget.h \
+		player_window.h \
+		../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/QMediaPlayer \
+		../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediaplayer.h \
+		../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/QMediaMetaData \
+		../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediametadata.h \
 		ui_sign_window.h \
 		../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QMessageBox \
-		../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h
+		../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h \
+		global.h \
+		../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/QString \
+		../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/qstring.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o sign_window.o sign_window.cpp
 
 player_window.o: player_window.cpp player_window.h \
@@ -1040,7 +1078,12 @@ player_window.o: player_window.cpp player_window.h \
 		3rdparty/taglib/1.11.1/include/taglib/tmap.h \
 		3rdparty/taglib/1.11.1/include/taglib/tmap.tcc \
 		../../Qt/5.8/clang_64/lib/QtTest.framework/Headers/QTest \
-		../../Qt/5.8/clang_64/lib/QtTest.framework/Headers/qtest.h
+		../../Qt/5.8/clang_64/lib/QtTest.framework/Headers/qtest.h \
+		../../Qt/5.8/clang_64/lib/QtGui.framework/Headers/QDragEnterEvent \
+		../../Qt/5.8/clang_64/lib/QtGui.framework/Headers/qevent.h \
+		../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/QMimeData \
+		../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/qmimedata.h \
+		../../Qt/5.8/clang_64/lib/QtGui.framework/Headers/QDropEvent
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o player_window.o player_window.cpp
 
 dragndrop.o: dragndrop.cpp dragndrop.h \

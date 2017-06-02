@@ -62,7 +62,7 @@ public:
     {
         if (signingWindow->objectName().isEmpty())
             signingWindow->setObjectName(QStringLiteral("signingWindow"));
-        signingWindow->resize(800, 600);
+        signingWindow->resize(535, 411);
         centralwidget = new QWidget(signingWindow);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         verticalLayout = new QVBoxLayout(centralwidget);
@@ -74,10 +74,10 @@ public:
         label_3->setGeometry(QRect(30, 80, 271, 16));
         pushButton_signin = new QPushButton(groupBox);
         pushButton_signin->setObjectName(QStringLiteral("pushButton_signin"));
-        pushButton_signin->setGeometry(QRect(540, 420, 161, 41));
+        pushButton_signin->setGeometry(QRect(170, 280, 161, 41));
         label_status = new QLabel(groupBox);
         label_status->setObjectName(QStringLiteral("label_status"));
-        label_status->setGeometry(QRect(10, 510, 461, 16));
+        label_status->setGeometry(QRect(20, 250, 461, 16));
         label_status->setFrameShape(QFrame::Box);
         label_status->setFrameShadow(QFrame::Raised);
         layoutWidget = new QWidget(groupBox);
@@ -147,7 +147,7 @@ public:
 
         dateEdit_userbirth = new QDateEdit(groupBox);
         dateEdit_userbirth->setObjectName(QStringLiteral("dateEdit_userbirth"));
-        dateEdit_userbirth->setGeometry(QRect(460, 160, 161, 41));
+        dateEdit_userbirth->setGeometry(QRect(240, 190, 161, 41));
         dateEdit_userbirth->setCalendarPopup(true);
 
         verticalLayout->addWidget(groupBox);
@@ -155,7 +155,7 @@ public:
         signingWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(signingWindow);
         menubar->setObjectName(QStringLiteral("menubar"));
-        menubar->setGeometry(QRect(0, 0, 800, 22));
+        menubar->setGeometry(QRect(0, 0, 535, 22));
         signingWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(signingWindow);
         statusbar->setObjectName(QStringLiteral("statusbar"));

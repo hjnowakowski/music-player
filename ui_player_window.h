@@ -44,6 +44,8 @@ public:
     QPushButton *pushButton_5;
     QPushButton *pushButton_2;
     QLabel *label_username;
+    QPushButton *pushButton_pause;
+    QPushButton *pushButton_6;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -93,7 +95,7 @@ public:
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
         pushButton->setEnabled(true);
-        pushButton->setGeometry(QRect(380, 290, 80, 24));
+        pushButton->setGeometry(QRect(380, 260, 80, 24));
         pushButton_5 = new QPushButton(centralwidget);
         pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
         pushButton_5->setGeometry(QRect(380, 320, 80, 24));
@@ -103,6 +105,12 @@ public:
         label_username = new QLabel(centralwidget);
         label_username->setObjectName(QStringLiteral("label_username"));
         label_username->setGeometry(QRect(430, 0, 141, 16));
+        pushButton_pause = new QPushButton(centralwidget);
+        pushButton_pause->setObjectName(QStringLiteral("pushButton_pause"));
+        pushButton_pause->setGeometry(QRect(380, 290, 80, 24));
+        pushButton_6 = new QPushButton(centralwidget);
+        pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
+        pushButton_6->setGeometry(QRect(420, 170, 121, 24));
         player_window->setCentralWidget(centralwidget);
         menubar = new QMenuBar(player_window);
         menubar->setObjectName(QStringLiteral("menubar"));
@@ -130,6 +138,8 @@ public:
         pushButton_5->setText(QApplication::translate("player_window", "Stop", Q_NULLPTR));
         pushButton_2->setText(QApplication::translate("player_window", "Song info", Q_NULLPTR));
         label_username->setText(QApplication::translate("player_window", "username", Q_NULLPTR));
+        pushButton_pause->setText(QApplication::translate("player_window", "Pause", Q_NULLPTR));
+        pushButton_6->setText(QApplication::translate("player_window", "Play from pause", Q_NULLPTR));
     } // retranslateUi
 
 };
