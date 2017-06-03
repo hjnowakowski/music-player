@@ -1,10 +1,13 @@
 \documentclass{article}
 
-\usepackage[T1]{fontenc}
+%\usepackage[T1]{fontenc}
 \usepackage{inconsolata}
 \usepackage{courier}
 \usepackage{amsmath}
 \usepackage{tcolorbox}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
 
 \usepackage{color}
 
@@ -12,6 +15,8 @@
 \definecolor{pgreen}{rgb}{0,0.5,0}
 \definecolor{pred}{rgb}{0.9,0,0}
 \definecolor{pgrey}{rgb}{0.46,0.45,0.48}
+
+
 
 \usepackage{listings}
 \lstset{language=C++,
@@ -29,52 +34,130 @@
   moredelim=[is][\textcolor{pgrey}]{\%\%}{\%\%}
 }
 
+
+\title{Music player, dokumentacja}
+\author{Katarzyna Nowicka, Łukasz Rodak, Henryk Nowakowski}
+\date{ }
+
+
+
+
+
+
+
+
+
+
 \begin{document}
+
+
+\begin{titlepage}
+
+{\fontfamily{roman}\selectfont
+
+   \vspace*{\stretch{1.0}}
+   \begin{center}
+      \Huge\textbf{Music player}\\
+      \huge\textit{Dokumentacja}\\~\\
+      \large\textit{Katarzyna Nowicka, Łukasz Rodak, Henryk Nowakowski}
+      
+   \end{center}
+   \vspace*{\stretch{2.0}}
+   
+   }
+\end{titlepage}
+
+
+\tableofcontents
+
+\newpage
+ 
+\section{Skąd wziął się pomysł}
+ 
+This is the first section.
+ 
+Lorem  ipsum  dolor  sit  amet,  consectetuer  adipiscing  
+elit.   Etiam  lobortisfacilisis sem.  Nullam nec mi et 
+neque pharetra sollicitudin.  Praesent imperdietmi nec ante. 
+Donec ullamcorper, felis non sodales...
+ 
+%\addcontentsline{toc}{section}{Unnumbered Section}
+%\section*{Unnumbered Section}
+ 
+%Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  
+
+ 
+\section{Główne założenia}
+ 
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  
+Etiam lobortis facilisissem.  Nullam nec mi et neque pharetra 
+sollicitudin.  Praesent imperdiet mi necante...
+
+\section{Wygląd aplikacji}
+ 
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  
+Etiam lobortis facilisissem.  Nullam nec mi et neque pharetra 
+sollicitudin.  Praesent imperdiet mi necante...
+
+\section{Instrukcja obsługi}
+ 
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  
+Etiam lobortis facilisissem.  Nullam nec mi et neque pharetra 
+sollicitudin.  Praesent imperdiet mi necante...
+
+\section{FAQ}
+ 
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  
+Etiam lobortis facilisissem.  Nullam nec mi et neque pharetra 
+sollicitudin.  Praesent imperdiet mi necante...
+
+\addcontentsline{toc}{section}{Unnumbered Section}
+\section*{Dla deweloperów}
+ 
+Część dla deweloperów
+
+\section{Wstęp do QT}
+ 
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  
+Etiam lobortis facilisissem.  Nullam nec mi et neque pharetra 
+sollicitudin.  Praesent imperdiet mi necante...
+
+\section{Prosta aplikacja napisana przy pomocy QT}
+ 
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  
+Etiam lobortis facilisissem.  Nullam nec mi et neque pharetra 
+sollicitudin.  Praesent imperdiet mi necante...
+
+\section{Opis ważnych części kodu}
+ 
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  
+Etiam lobortis facilisissem.  Nullam nec mi et neque pharetra 
+sollicitudin.  Praesent imperdiet mi necante...
+
+\section{Możliwość rozbudowy}
+ 
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  
+Etiam lobortis facilisissem.  Nullam nec mi et neque pharetra 
+sollicitudin.  Praesent imperdiet mi necante...
+ 
+
+
+
 \begin{tcolorbox}
 \begin{lstlisting}
 
 {\fontfamily{courier}\selectfont
 
-#include <iostream>
-
-int main(){
-printf("Jestem wesoły romek");
-return 0;
+void welcome_window::on_button_login_clicked()
+{
+    hide();
+    logwindow = new MainWindow(this);
+    logwindow->show();
 }
-
-
-/**
- * This is a doc comment.
- */
-package com.ociweb.jnb.lombok;
-
-import java.util.Date;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NonNull;
-
-$$@Data
-$$@EqualsAndHashCode(exclude={"address","city","state","zip"})
-public class Person {
-    enum Gender { Male, Female }
-
-    // another comment
-
-    %%@NonNull%% private String firstName;
-    %%@NonNull%% private String lastName;
-    %%@NonNull%% private final Gender gender;
-    %%@NonNull%% private final Date dateOfBirth;
-
-    private String ssn;
-    private String address;
-    private String city;
-    private String state;
-    private String zip;
-}
-
 }
 
 \end{lstlisting}
 \end{tcolorbox}
 
 \end{document}
+
