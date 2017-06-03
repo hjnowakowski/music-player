@@ -11,3 +11,38 @@ Dla osób programujących:
 1. Wstęp do QT
 2. Jak wygląda apka napisana w QT
 3. Opis wszystkich ważnych części kodu
+
+
+--------------------------
+Będę pisał tutaj, potem ktoś jak będzie miał chwilkę to przerobi to do LATEX-a tak żeby było ładnie,
+a tutaj można skrobać nie patrząc ze coś źle wygląda (może się potem przyda to, można wrzucać pomysły, a żeby jedna osoba
+pilnowała żeby to wyglądało ładnie w LATEX-ie)
+
+1. Skąd wzięliśmy pomysł?
+- Chęć stworzenia jakiejś aplikacji która nie jest grą (większość młodych programistów zajmuje się właśnie grami na początek,
+  bo podstawowe gry są łatwe i proste w pisaniu)
+- Chcięliśmy stworzyć projekt który będzie wykorzystywał bazę danych 
+- Wewnętrzna potrzeba stworzenia czegoś czego nie porzucimy od razu po skończeniu projektu, stworzenie takiej aplikacji,
+  którą będzie można potem korzystać na codzień z satysfakcją że samemu się udało stworzyć takie dzieło
+- Nasze zamiłowanie do muzyki która towarzyszy często podczas zmagań z problemami programisty
+- Muzyka towarzyszy w obecnych czasach niemalże każdemu, jak nie na osobistym komputerze to na ekranie smartfonów,
+  stąd pomysł na aplikację którą każdy będzie mógł używać
+- Muzyka pomaga się człowiekowi skupić, np można wykorzystać muzykę aby spróbować wymyślić projekt na zaliczenie programowania,
+  w takim razie w naszym przypadku ten pomysł będzie mógł ułatwić nam skupienie się przy ulubionej muzyce przy wymyślaniu następnych
+  projektów :)
+  
+2. Główne założenia
+- konta osobiste by każdy mógł dysponować swoją kolekcją ulubionych utworów
+- stworzenie aplikacji która będzie działała na wszystkich systemach
+- prostrza konstrukcja -> szybsze działanie
+- minimalne obciążenie komputera dzięki niewielkiemu zużyciu pamięci
+- wygodny i prosty w obsłudze
+
+5. FAQ
+- Jak to się włącza?
+- Piosenka mi się skończyła, co robić?
+- Skąd pobrać nowe utwory?
+- Gdzie znajde listę pasujących formatów?
+- Czy aplikacja będzie rozwijana o nowe funkcje?
+- Na jakiej licencji jest tworzona aplikacja?
+- Czy jest możliwość przeniesienia swoich ulubionych lsit razem z utworami na nowy komputer?
