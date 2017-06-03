@@ -1,0 +1,13 @@
+Ogólny schemat dokumentacji:
+
+1. Skąd wzięliśmy pomysł 
+2. Główne założenia
+3. Wygląd aplikacji, gdzie co się znajdzie (+ screeny)
+4. Instrukcja obsługi, na jakich platformach działa (wszystkich XD),
+jak uruchomić na danej platformie itp.
+5. FAQ
+
+Dla osób programujących:
+1. Wstęp do QT
+2. Jak wygląda apka napisana w QT
+2. Opis wszystkich ważnych części kodu
