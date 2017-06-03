@@ -55,6 +55,7 @@ private slots:
 private:
     Ui::player_window *ui;
     QMediaPlayer* player;
+    QMediaPlaylist *playlist;
 };
 
 #endif // PLAYER_WINDOW_H

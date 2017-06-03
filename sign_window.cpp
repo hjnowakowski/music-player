@@ -14,7 +14,7 @@ signingWindow::signingWindow(QWidget *parent) :
     ui->setupUi(this);
 
     users_db= QSqlDatabase::addDatabase("QSQLITE");
-    users_db.setDatabaseName("/Users/henryknowakowski/Projekt2_rozgrzewka2/users.db");
+    users_db.setDatabaseName("/Users/henryknowakowski/projekt/projekt1/users.db");
 
     //dir to db is different on your devices, to make it easy to paste, comment your own below
 
@@ -46,6 +46,12 @@ void signingWindow::on_pushButton_signin_clicked()
         return;
     }
 
+    if(age<=13){
+        ui->label_status->setText("Musisz mieć ponad 13 lat, żeby się zarejestrować😺");
+        return;
+    }
+
+
 
 
     if(!users_db.isOpen()){
@@ -66,7 +72,7 @@ void signingWindow::on_pushButton_signin_clicked()
             QMessageBox::warning(this, "Sign in", "such user already exists");
         }
         if(count>1){
-            ui->label_status->setText("username is correct! yupiiii");
+            ui->label_status->setText("username pis correct! yupiiii");
             //todo dodanie użytkownika + exepcion
         }
         if(count<1){

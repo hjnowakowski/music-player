@@ -19,6 +19,7 @@ player_window::player_window(QWidget *parent) :
     ui->setupUi(this);
 
     player = new QMediaPlayer(this);
+    //playlist = new QMediaPlaylist(this);
 
     connect(player, &QMediaPlayer::positionChanged, this, &player_window::on_positionChanged);
     connect(player, &QMediaPlayer::durationChanged, this, &player_window::on_durationChanged);
@@ -35,6 +36,9 @@ player_window::player_window(QWidget *parent) :
     setAcceptDrops(true);
 
     ui->label_username->setText(g_username);
+
+    std::cout << "player_window window is opened" << std::endl;
+
 
 }
 
@@ -156,6 +160,8 @@ void player_window::dropEvent(QDropEvent *event){
         music_path = i->path();
         ui->listWidget->addItem(nombreArch);
     }
+
+    //playlist->addMedia(QUrl(i->path()));
 
 }
 

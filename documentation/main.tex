@@ -1,0 +1,80 @@
+\documentclass{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{inconsolata}
+\usepackage{courier}
+\usepackage{amsmath}
+\usepackage{tcolorbox}
+
+\usepackage{color}
+
+\definecolor{pblue}{rgb}{0.13,0.13,1}
+\definecolor{pgreen}{rgb}{0,0.5,0}
+\definecolor{pred}{rgb}{0.9,0,0}
+\definecolor{pgrey}{rgb}{0.46,0.45,0.48}
+
+\usepackage{listings}
+\lstset{language=C++,
+  showspaces=false,
+  showtabs=false,
+  breaklines=true,
+  showstringspaces=false,
+  breakatwhitespace=true,
+  commentstyle=\color{pgreen},
+  keywordstyle=\color{pblue},
+  stringstyle=\color{pred},
+  basicstyle=\color{pgreen}\ttfamily,
+  %basicstyle=\ttfamily,
+  moredelim=[il][\textcolor{pgrey}]{$$},
+  moredelim=[is][\textcolor{pgrey}]{\%\%}{\%\%}
+}
+
+\begin{document}
+\begin{tcolorbox}
+\begin{lstlisting}
+
+{\fontfamily{courier}\selectfont
+
+#include <iostream>
+
+int main(){
+printf("Jestem wesoły romek");
+return 0;
+}
+
+
+/**
+ * This is a doc comment.
+ */
+package com.ociweb.jnb.lombok;
+
+import java.util.Date;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NonNull;
+
+$$@Data
+$$@EqualsAndHashCode(exclude={"address","city","state","zip"})
+public class Person {
+    enum Gender { Male, Female }
+
+    // another comment
+
+    %%@NonNull%% private String firstName;
+    %%@NonNull%% private String lastName;
+    %%@NonNull%% private final Gender gender;
+    %%@NonNull%% private final Date dateOfBirth;
+
+    private String ssn;
+    private String address;
+    private String city;
+    private String state;
+    private String zip;
+}
+
+}
+
+\end{lstlisting}
+\end{tcolorbox}
+
+\end{document}

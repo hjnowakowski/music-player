@@ -747,7 +747,6 @@ moc_welcome_window.cpp: ../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QM
 		../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/QMediaMetaData \
 		../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediametadata.h \
 		log_window.h \
-		welcome_window.h \
 		drag_n_drop.h \
 		welcome_window.h \
 		moc_predefs.h \
@@ -781,12 +780,6 @@ moc_log_window.cpp: ../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QMainW
 		../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediaplayer.h \
 		../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/QMediaMetaData \
 		../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediametadata.h \
-		welcome_window.h \
-		sign_window.h \
-		../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QCalendarWidget \
-		../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qcalendarwidget.h \
-		log_window.h \
-		drag_n_drop.h \
 		log_window.h \
 		moc_predefs.h \
 		../../Qt/5.8/clang_64/bin/moc
@@ -995,11 +988,6 @@ log_window.o: log_window.cpp log_window.h \
 		../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediaplayer.h \
 		../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/QMediaMetaData \
 		../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediametadata.h \
-		welcome_window.h \
-		sign_window.h \
-		../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QCalendarWidget \
-		../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qcalendarwidget.h \
-		drag_n_drop.h \
 		ui_log_window.h \
 		../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QMessageBox \
 		../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h \
@@ -1059,26 +1047,6 @@ player_window.o: player_window.cpp player_window.h \
 		global.h \
 		../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/QString \
 		../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/qstring.h \
-		3rdparty/taglib/1.11.1/include/taglib/fileref.h \
-		3rdparty/taglib/1.11.1/include/taglib/tfile.h \
-		3rdparty/taglib/1.11.1/include/taglib/taglib_export.h \
-		3rdparty/taglib/1.11.1/include/taglib/taglib.h \
-		3rdparty/taglib/1.11.1/include/taglib/taglib_config.h \
-		3rdparty/taglib/1.11.1/include/taglib/tag.h \
-		3rdparty/taglib/1.11.1/include/taglib/tstring.h \
-		3rdparty/taglib/1.11.1/include/taglib/tbytevector.h \
-		3rdparty/taglib/1.11.1/include/taglib/tiostream.h \
-		3rdparty/taglib/1.11.1/include/taglib/tstringlist.h \
-		3rdparty/taglib/1.11.1/include/taglib/tlist.h \
-		3rdparty/taglib/1.11.1/include/taglib/tlist.tcc \
-		3rdparty/taglib/1.11.1/include/taglib/trefcounter.h \
-		3rdparty/taglib/1.11.1/include/taglib/tbytevectorlist.h \
-		3rdparty/taglib/1.11.1/include/taglib/audioproperties.h \
-		3rdparty/taglib/1.11.1/include/taglib/tpropertymap.h \
-		3rdparty/taglib/1.11.1/include/taglib/tmap.h \
-		3rdparty/taglib/1.11.1/include/taglib/tmap.tcc \
-		../../Qt/5.8/clang_64/lib/QtTest.framework/Headers/QTest \
-		../../Qt/5.8/clang_64/lib/QtTest.framework/Headers/qtest.h \
 		../../Qt/5.8/clang_64/lib/QtGui.framework/Headers/QDragEnterEvent \
 		../../Qt/5.8/clang_64/lib/QtGui.framework/Headers/qevent.h \
 		../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/QMimeData \
