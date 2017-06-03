@@ -10,4 +10,4 @@ jak uruchomić na danej platformie itp.
 Dla osób programujących:
 1. Wstęp do QT
 2. Jak wygląda apka napisana w QT
-2. Opis wszystkich ważnych części kodu
+3. Opis wszystkich ważnych części kodu
