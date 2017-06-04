@@ -44,8 +44,8 @@ SOURCES += src/main.cpp\
     src/log_window.cpp \
     src/sign_window.cpp \
     src/player_window.cpp \
-    src/dragndrop.cpp \
-    src/drag_n_drop.cpp \
+    #src/dragndrop.cpp \
+    #src/drag_n_drop.cpp \
     src/global.cpp
 
 HEADERS  += \
@@ -53,8 +53,8 @@ HEADERS  += \
     headers/log_window.h \
     headers/player_window.h \
     headers/sign_window.h \
-    headers/dragndrop.h \
-    headers/drag_n_drop.h \
+    #headers/dragndrop.h \
+    #headers/drag_n_drop.h \
     headers/global.h
 
 FORMS    += \
@@ -62,5 +62,5 @@ FORMS    += \
     forms/sign_window.ui \
     forms/log_window.ui \
     forms/player_window.ui \
-    forms/dragndrop.ui \
-    forms/drag_n_drop.ui
+    #forms/dragndrop.ui \
+    #forms/drag_n_drop.ui
