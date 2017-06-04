@@ -39,28 +39,28 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 
-SOURCES += main.cpp\
-    welcome_window.cpp \
-    log_window.cpp \
-    sign_window.cpp \
-    player_window.cpp \
-    dragndrop.cpp \
-    drag_n_drop.cpp \
-    global.cpp
+SOURCES += src/main.cpp\
+    src/welcome_window.cpp \
+    src/log_window.cpp \
+    src/sign_window.cpp \
+    src/player_window.cpp \
+    src/dragndrop.cpp \
+    src/drag_n_drop.cpp \
+    src/global.cpp
 
 HEADERS  += \
-    welcome_window.h \
-    log_window.h \
-    player_window.h \
-    sign_window.h \
-    dragndrop.h \
-    drag_n_drop.h \
-    global.h
+    headers/welcome_window.h \
+    headers/log_window.h \
+    headers/player_window.h \
+    headers/sign_window.h \
+    headers/dragndrop.h \
+    headers/drag_n_drop.h \
+    headers/global.h
 
 FORMS    += \
-    welcome_window.ui \
-    sign_window.ui \
-    log_window.ui \
-    player_window.ui \
-    dragndrop.ui \
-    drag_n_drop.ui
+    forms/welcome_window.ui \
+    forms/sign_window.ui \
+    forms/log_window.ui \
+    forms/player_window.ui \
+    forms/dragndrop.ui \
+    forms/drag_n_drop.ui
