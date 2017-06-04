@@ -64,3 +64,6 @@ FORMS    += \
     forms/player_window.ui \
     forms/dragndrop.ui \
     forms/drag_n_drop.ui
+
+RESOURCES += \
+    resources.qrc

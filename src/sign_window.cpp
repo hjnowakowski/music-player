@@ -46,7 +46,7 @@ void signingWindow::on_pushButton_signin_clicked()
         return;
     }
 
-    if(age<=13){
+    if(age<="13"){
         ui->label_status->setText("Musisz mieć ponad 13 lat, żeby się zarejestrować😺");
         return;
     }

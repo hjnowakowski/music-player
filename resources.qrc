@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>screenshots/Zrzut ekranu 2017-04-09 o 11.59.45.png</file>
+        <file>db/users.db</file>
+    </qresource>
+</RCC>
