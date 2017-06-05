@@ -1,12 +1,19 @@
 #include "headers/player_window.h"
 #include "ui_player_window.h"
-#include <iostream>
 #include "headers/global.h"
-#include <QMediaMetaData>
-#include <string>
+
+//drag n drop:
 #include <QDragEnterEvent>
-#include <QMimeData>
 #include <QDropEvent>
+
+//player:
+#include <QMediaMetaData>
+#include <QMimeData>
+#include <QMediaPlaylist>
+
+//Do testowania:
+#include <iostream>
+#include <string>
 
 
 QString music_path;
@@ -19,7 +26,7 @@ player_window::player_window(QWidget *parent) :
     ui->setupUi(this);
 
     player = new QMediaPlayer(this);
-    //playlist = new QMediaPlaylist(this);
+    playlist = new QMediaPlaylist(this);
 
     connect(player, &QMediaPlayer::positionChanged, this, &player_window::on_positionChanged);
     connect(player, &QMediaPlayer::durationChanged, this, &player_window::on_durationChanged);
@@ -164,6 +171,9 @@ void player_window::dropEvent(QDropEvent *event){
     }
 
     //playlist->addMedia(QUrl(i->path()));
+
+
+    playlist->addMedia(QUrl(music_path));
 
 }
 
