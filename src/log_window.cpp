@@ -5,6 +5,7 @@
 #include <iostream>
 #include <string>
 #include "headers/global.h"
+#include "headers/welcome_window.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -91,5 +92,4 @@ void MainWindow::on_pushButton_Login_clicked()
 void MainWindow::on_pushButton_clicked()
 {
     return;
-
 }
