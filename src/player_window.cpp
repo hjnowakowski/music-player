@@ -63,7 +63,6 @@ void player_window::on_pushButton_clicked()
 
     std::cout << "Play button pressed" << std::endl;
     player->setMedia(QUrl::fromLocalFile(music_path));
-    player->play();
 
 
 
@@ -71,17 +70,20 @@ void player_window::on_pushButton_clicked()
 
     std::cout << player->metaData(QMediaMetaData::MediaType).toString().toStdString() << std::endl;
 
+    player->play();
+
     qDebug() << player->errorString();
-
-
-
-
-
-
 
     ui->label_3->setText(player->metaData(QMediaMetaData::MediaType).toString());
 
+    for(int i = 0;i <10000; i++){
+        int k = 0;
+        k++;
+    }
 
+    std::cout << player->metaData(QMediaMetaData::MediaType).toString().toStdString() << std::endl;
+
+    std::cout << "end of method" << std::endl;
 
     //QString albumTitle = player->metaData(QMediaMetaData::AlbumTitle);
     //std::cout << albumTitle << std::endl;
@@ -91,7 +93,7 @@ void player_window::on_pushButton_clicked()
         //ui->label_3->setText(player->metaData(QMediaMetaData::AlbumArtist).toString());
       //}
 
-
+    song_info();
 }
 
 void player_window::on_pushButton_2_clicked()
@@ -178,4 +180,10 @@ void player_window::on_pushButton_pause_clicked()
 void player_window::on_pushButton_6_clicked()
 {
     player->play();
+}
+
+
+void player_window::song_info(){
+    ui->label_3->setText(player->metaData(QMediaMetaData::MediaType).toString());
+    std::cout << player->metaData(QMediaMetaData::MediaType).toString().toStdString() << std::endl;
 }

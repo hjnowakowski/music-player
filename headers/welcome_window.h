@@ -5,7 +5,6 @@
 #include "sign_window.h"
 #include "log_window.h"
 #include "player_window.h"
-#include "drag_n_drop.h"
 
 
 
@@ -32,12 +31,13 @@ private slots:
 
     void on_pushButton_dragndrop_clicked();
 
+    void on_pushButton_clicked();
+
 private:
     Ui::welcome_window *ui;
     MainWindow *logwindow;
     signingWindow *signwindow;
     player_window *playerwindow;
-    drag_n_drop *drag_drop;
 };
 
 #endif // WELCOME_WINDOW_H

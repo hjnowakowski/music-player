@@ -16,8 +16,6 @@
 \definecolor{pred}{rgb}{0.9,0,0}
 \definecolor{pgrey}{rgb}{0.46,0.45,0.48}
 
-
-
 \usepackage{listings}
 \lstset{language=C++,
   showspaces=false,
@@ -118,11 +116,13 @@ Część dla deweloperów
 
 \section{Wstęp do QT}
  
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  
-Etiam lobortis facilisissem.  Nullam nec mi et neque pharetra 
-sollicitudin.  Praesent imperdiet mi necante...
+W celu napisania dobrej, szybkiej oraz funkcjonalnej aplikacji poszukiwaliśmy odpowiedniego środowiska rozszerzającego zwykłego C++-a. Wybór padł na QT. Jest to zestaw wielu bibliotek i narzędzi programistycznych, który między innymi współpracyje z C++-em. Pozwala na budowanie aplika
 
-\section{Prosta aplikacja napisana przy pomocy QT}
+\secgraficznym interfejsem użytkownika, które działają na wielu platformach, jak np. MacOS, Linux, Windows. Qt składa się z wielu przydatnych i przez nas wykorzystanych narzędzi takich jak: moc (Meta Object Compiler) czyli preprocesor generujący z plików nagłówkiwych (*.h) dodatkowe pliki źródłowe (*.cpp); uic (User Interface Compiler) jest to kompilator plików *.ui, czyli plików xml zawierających w sobie informacje o wyglądzie i ułożeniu poszczególnych przycisków, list itp. w oknie aplikacji; qmake czyli program do zarządzania procesem kompilacji, który tworzy plik Makefile, który zaś zawiera informacje o projekcie, plikach, które mają być kompilowane itd; Qt Designer to plikacja, która pozwala na sprawne edytowanie graficznego interfejsu; Qt Creator, czyli IDE, które wykorzystaliśmy do pisania aplikacji.
+
+
+
+\setion{Prosta apcji z likacja napisana przy pomocy QT} %W sumie nie wiem czy potrzebne  
  
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  
 Etiam lobortis facilisissem.  Nullam nec mi et neque pharetra 
@@ -130,9 +130,23 @@ sollicitudin.  Praesent imperdiet mi necante...
 
 \section{Opis ważnych części kodu}
  
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  
-Etiam lobortis facilisissem.  Nullam nec mi et neque pharetra 
-sollicitudin.  Praesent imperdiet mi necante...
+Przykładowo: \\
+
+Metoda obiektu \verb|welcome_window|, która aktywuje się po kliknięciu przycisku \verb|button_login|
+\\
+
+\begin{tcolorbox}
+\begin{lstlisting}
+
+void welcome_window::on_button_login_clicked()
+{
+    hide();
+    logwindow = new MainWindow(this);
+    logwindow->show();
+}
+
+\end{lstlisting}
+\end{tcolorbox}
 
 \section{Możliwość rozbudowy}
  
@@ -142,22 +156,6 @@ sollicitudin.  Praesent imperdiet mi necante...
  
 
 
-
-\begin{tcolorbox}
-\begin{lstlisting}
-
-{\fontfamily{courier}\selectfont
-
-void welcome_window::on_button_login_clicked()
-{
-    hide();
-    logwindow = new MainWindow(this);
-    logwindow->show();
-}
-}
-
-\end{lstlisting}
-\end{tcolorbox}
 
 \end{document}
 

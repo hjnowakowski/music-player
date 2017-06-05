@@ -2,7 +2,6 @@
 #include "ui_welcome_window.h"
 #include "headers/sign_window.h"
 #include "headers/log_window.h"
-#include "headers/drag_n_drop.h"
 
 
 
@@ -47,4 +46,9 @@ void welcome_window::on_pushButton_player_clicked()
 void welcome_window::on_pushButton_dragndrop_clicked()
 {
     return;
+}
+
+void welcome_window::on_pushButton_clicked()
+{
+
 }
