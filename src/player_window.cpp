@@ -54,6 +54,11 @@ player_window::~player_window()
     delete ui;
 }
 
+
+
+
+//Music player methods:
+
 void player_window::on_horizontalSlider_progress_sliderMoved(int position)
 {
         player->setPosition(position);
@@ -66,12 +71,8 @@ void player_window::on_horizontalSlider_volume_sliderMoved(int position)
 
 void player_window::on_pushButton_clicked()
 {
-
-
     std::cout << "Play button pressed" << std::endl;
     player->setMedia(QUrl::fromLocalFile(music_path));
-
-
 
     std::string a;
 
@@ -82,11 +83,6 @@ void player_window::on_pushButton_clicked()
     qDebug() << player->errorString();
 
     ui->label_3->setText(player->metaData(QMediaMetaData::MediaType).toString());
-
-    for(int i = 0;i <10000; i++){
-        int k = 0;
-        k++;
-    }
 
     std::cout << player->metaData(QMediaMetaData::MediaType).toString().toStdString() << std::endl;
 
@@ -103,6 +99,38 @@ void player_window::on_pushButton_clicked()
     song_info();
 }
 
+void player_window::on_positionChanged(qint64 position)
+{
+    ui->horizontalSlider_progress->setValue(position);
+}
+
+void player_window::on_durationChanged(qint64 position)
+{
+    ui->horizontalSlider_progress->setMaximum(position);
+}
+
+void player_window::on_pushButton_5_clicked()
+{
+    player->stop();
+}
+
+void player_window::on_pushButton_pause_clicked()
+{
+    player->pause();
+}
+
+void player_window::on_pushButton_6_clicked()
+{
+    player->play();
+}
+
+
+
+
+
+
+//Song info methods:
+
 void player_window::on_pushButton_2_clicked()
 {
     ui->label_3->setText(player->metaData(QMediaMetaData::MediaType).toString());
@@ -112,15 +140,12 @@ void player_window::on_pushButton_2_clicked()
 
 }
 
-void player_window::on_positionChanged(qint64 position)
-{
-        ui->horizontalSlider_progress->setValue(position);
+
+void player_window::song_info(){
+    ui->label_3->setText(player->metaData(QMediaMetaData::MediaType).toString());
+    std::cout << player->metaData(QMediaMetaData::MediaType).toString().toStdString() << std::endl;
 }
 
-void player_window::on_durationChanged(qint64 position)
-{
-        ui->horizontalSlider_progress->setMaximum(position);
-}
 
 
 
@@ -177,23 +202,6 @@ void player_window::dropEvent(QDropEvent *event){
 
 }
 
-void player_window::on_pushButton_5_clicked()
-{
-    player->stop();
-}
-
-void player_window::on_pushButton_pause_clicked()
-{
-    player->pause();
-}
-
-void player_window::on_pushButton_6_clicked()
-{
-    player->play();
-}
 
 
-void player_window::song_info(){
-    ui->label_3->setText(player->metaData(QMediaMetaData::MediaType).toString());
-    std::cout << player->metaData(QMediaMetaData::MediaType).toString().toStdString() << std::endl;
-}
+

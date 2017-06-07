@@ -38,6 +38,7 @@ private:
     QSqlDatabase users_db;
     player_window *playerwindow;
 
+
 };
 
 #endif // MAINWINDOW_H

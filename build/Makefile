@@ -735,6 +735,7 @@ moc_welcome_window.cpp: ../../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers
 		../../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediametadata.h \
 		../headers/log_window.h \
 		../headers/welcome_window.h \
+		../headers/welcome_window.h \
 		moc_predefs.h \
 		../../../Qt/5.8/clang_64/bin/moc
 	/Users/henryknowakowski/Qt/5.8/clang_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/Users/henryknowakowski/Qt/5.8/clang_64/mkspecs/macx-clang -I/Users/henryknowakowski/projekt/projekt1 -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtWidgets.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtGui.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtSql.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtNetwork.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtTest.framework/Headers -I/Users/henryknowakowski/Qt/5.8/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/8.1.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/usr/include -F/Users/henryknowakowski/Qt/5.8/clang_64/lib ../headers/welcome_window.h -o moc_welcome_window.cpp
@@ -766,6 +767,11 @@ moc_log_window.cpp: ../../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QMa
 		../../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediaplayer.h \
 		../../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/QMediaMetaData \
 		../../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediametadata.h \
+		../headers/welcome_window.h \
+		../headers/sign_window.h \
+		../../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QCalendarWidget \
+		../../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qcalendarwidget.h \
+		../headers/log_window.h \
 		../headers/log_window.h \
 		moc_predefs.h \
 		../../../Qt/5.8/clang_64/bin/moc
@@ -950,6 +956,10 @@ log_window.o: ../src/log_window.cpp ../headers/log_window.h \
 		../../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediaplayer.h \
 		../../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/QMediaMetaData \
 		../../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediametadata.h \
+		../headers/welcome_window.h \
+		../headers/sign_window.h \
+		../../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QCalendarWidget \
+		../../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qcalendarwidget.h \
 		ui_log_window.h \
 		../../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QMessageBox \
 		../../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h \
@@ -1011,9 +1021,11 @@ player_window.o: ../src/player_window.cpp ../headers/player_window.h \
 		../../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/qstring.h \
 		../../../Qt/5.8/clang_64/lib/QtGui.framework/Headers/QDragEnterEvent \
 		../../../Qt/5.8/clang_64/lib/QtGui.framework/Headers/qevent.h \
+		../../../Qt/5.8/clang_64/lib/QtGui.framework/Headers/QDropEvent \
 		../../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/QMimeData \
 		../../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/qmimedata.h \
-		../../../Qt/5.8/clang_64/lib/QtGui.framework/Headers/QDropEvent
+		../../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/QMediaPlaylist \
+		../../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediaplaylist.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o player_window.o ../src/player_window.cpp
 
 global.o: ../src/global.cpp ../headers/global.h \
