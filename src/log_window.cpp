@@ -53,7 +53,7 @@ void MainWindow::on_pushButton_Login_clicked()
     QString username = ui->lineEdit_username->text();
     QString password = ui->lineEdit_password->text();
 
-    ui->label_data->setText(year1+'-' + mon1+'-' + day1);  //chwilowo
+    //ui->label_data->setText(year1+'-' + mon1+'-' + day1);  //chwilowo
 
 
 

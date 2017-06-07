@@ -49,19 +49,6 @@
      <string>[+]Status</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_data">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>180</y>
-      <width>251</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>data</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
@@ -91,7 +78,7 @@
      <bool>false</bool>
     </property>
     <property name="text">
-     <string>Login</string>
+     <string>Zaloguj</string>
     </property>
     <property name="checkable">
      <bool>false</bool>
@@ -113,27 +100,27 @@
    <widget class="QLabel" name="label_username">
     <property name="geometry">
      <rect>
-      <x>60</x>
+      <x>10</x>
       <y>60</y>
-      <width>71</width>
+      <width>121</width>
       <height>21</height>
      </rect>
     </property>
     <property name="text">
-     <string>Username</string>
+     <string>Nazwa użykownika</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_passwd">
     <property name="geometry">
      <rect>
-      <x>60</x>
+      <x>10</x>
       <y>100</y>
-      <width>71</width>
+      <width>121</width>
       <height>21</height>
      </rect>
     </property>
     <property name="text">
-     <string>Password</string>
+     <string>Hasło użytkownika</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit_password">

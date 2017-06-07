@@ -23,6 +23,7 @@
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSlider>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -35,7 +36,6 @@ public:
     QLineEdit *lineEdit;
     QPushButton *pushButton_3;
     QPushButton *pushButton_4;
-    QLabel *label_4;
     QSlider *horizontalSlider_progress;
     QPushButton *pushButton;
     QPushButton *pushButton_5;
@@ -61,17 +61,22 @@ public:
     QSlider *horizontalSlider_volume;
     QMenuBar *menubar;
     QStatusBar *statusbar;
+    QToolBar *toolBar;
+    QToolBar *toolBar_2;
+    QToolBar *toolBar_3;
 
     void setupUi(QMainWindow *player_window)
     {
         if (player_window->objectName().isEmpty())
             player_window->setObjectName(QStringLiteral("player_window"));
         player_window->resize(743, 562);
+        player_window->setStyleSheet(QLatin1String("color: hex(#616161);\n"
+"background-color: hex(#616161);"));
         centralwidget = new QWidget(player_window);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         listWidget = new QListWidget(centralwidget);
         listWidget->setObjectName(QStringLiteral("listWidget"));
-        listWidget->setGeometry(QRect(70, 70, 261, 271));
+        listWidget->setGeometry(QRect(30, 70, 331, 331));
         listWidget->setDragEnabled(true);
         listWidget->setDragDropOverwriteMode(true);
         listWidget->setDragDropMode(QAbstractItemView::DragDrop);
@@ -85,9 +90,6 @@ public:
         pushButton_4 = new QPushButton(centralwidget);
         pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
         pushButton_4->setGeometry(QRect(380, 170, 80, 24));
-        label_4 = new QLabel(centralwidget);
-        label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setGeometry(QRect(10, 90, 60, 16));
         horizontalSlider_progress = new QSlider(centralwidget);
         horizontalSlider_progress->setObjectName(QStringLiteral("horizontalSlider_progress"));
         horizontalSlider_progress->setGeometry(QRect(10, 490, 491, 20));
@@ -188,6 +190,15 @@ public:
         statusbar = new QStatusBar(player_window);
         statusbar->setObjectName(QStringLiteral("statusbar"));
         player_window->setStatusBar(statusbar);
+        toolBar = new QToolBar(player_window);
+        toolBar->setObjectName(QStringLiteral("toolBar"));
+        player_window->addToolBar(Qt::TopToolBarArea, toolBar);
+        toolBar_2 = new QToolBar(player_window);
+        toolBar_2->setObjectName(QStringLiteral("toolBar_2"));
+        player_window->addToolBar(Qt::TopToolBarArea, toolBar_2);
+        toolBar_3 = new QToolBar(player_window);
+        toolBar_3->setObjectName(QStringLiteral("toolBar_3"));
+        player_window->addToolBar(Qt::TopToolBarArea, toolBar_3);
 
         retranslateUi(player_window);
 
@@ -199,7 +210,6 @@ public:
         player_window->setWindowTitle(QApplication::translate("player_window", "Music Player", Q_NULLPTR));
         pushButton_3->setText(QApplication::translate("player_window", "open", Q_NULLPTR));
         pushButton_4->setText(QApplication::translate("player_window", "delete", Q_NULLPTR));
-        label_4->setText(QApplication::translate("player_window", "name", Q_NULLPTR));
         pushButton->setText(QApplication::translate("player_window", "Play", Q_NULLPTR));
         pushButton_5->setText(QApplication::translate("player_window", "Stop", Q_NULLPTR));
         pushButton_2->setText(QApplication::translate("player_window", "Song info", Q_NULLPTR));
@@ -215,6 +225,9 @@ public:
         label_info_artist->setText(QApplication::translate("player_window", "artist", Q_NULLPTR));
         label_info_musicgenere->setText(QApplication::translate("player_window", "musicgenere", Q_NULLPTR));
         label_2->setText(QApplication::translate("player_window", "Volume", Q_NULLPTR));
+        toolBar->setWindowTitle(QApplication::translate("player_window", "toolBar", Q_NULLPTR));
+        toolBar_2->setWindowTitle(QApplication::translate("player_window", "toolBar_2", Q_NULLPTR));
+        toolBar_3->setWindowTitle(QApplication::translate("player_window", "toolBar_3", Q_NULLPTR));
     } // retranslateUi
 
 };

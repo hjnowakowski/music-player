@@ -6,100 +6,128 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>799</width>
-    <height>598</height>
+    <width>796</width>
+    <height>563</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Welcome window | Music Player</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QHBoxLayout" name="horizontalLayout">
-    <item>
-     <widget class="QLabel" name="label_welcome">
-      <property name="font">
-       <font>
-        <pointsize>49</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Welcome</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QGroupBox" name="groupBox">
-      <property name="title">
-       <string/>
-      </property>
-      <widget class="QPushButton" name="button_login">
-       <property name="geometry">
-        <rect>
-         <x>40</x>
-         <y>70</y>
-         <width>121</width>
-         <height>61</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>log in</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="button_signin">
-       <property name="geometry">
-        <rect>
-         <x>220</x>
-         <y>70</y>
-         <width>121</width>
-         <height>61</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>sign in</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="Quit">
-       <property name="geometry">
-        <rect>
-         <x>270</x>
-         <y>480</y>
-         <width>91</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="cursor">
-        <cursorShape>ArrowCursor</cursorShape>
-       </property>
-       <property name="text">
-        <string>Zakończ</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="pushButton">
-       <property name="geometry">
-        <rect>
-         <x>170</x>
-         <y>290</y>
-         <width>80</width>
-         <height>24</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>player, test</string>
-       </property>
-      </widget>
-     </widget>
-    </item>
-   </layout>
+   <widget class="QLabel" name="label_welcome">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>371</width>
+      <height>511</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>49</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Witamy!&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Może muzykę nastawić?&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Zaloguj się lub zarejestruj, żeby przejść dalej.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>50</y>
+      <width>371</width>
+      <height>461</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QPushButton" name="button_login">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>70</y>
+       <width>121</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(76, 76, 76);
+color: rgb(0, 0, 0);</string>
+     </property>
+     <property name="text">
+      <string>logowanie</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="button_signin">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>70</y>
+       <width>121</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 0, 0);</string>
+     </property>
+     <property name="text">
+      <string>rejestracja</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Quit">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>480</y>
+       <width>91</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>ArrowCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 0, 0);</string>
+     </property>
+     <property name="text">
+      <string>Zakończ</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>330</y>
+       <width>80</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>player, test</string>
+     </property>
+    </widget>
+    <zorder>button_login</zorder>
+    <zorder>button_signin</zorder>
+    <zorder>Quit</zorder>
+    <zorder>pushButton</zorder>
+    <zorder>label_welcome</zorder>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>799</width>
+     <width>796</width>
      <height>22</height>
     </rect>
    </property>

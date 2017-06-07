@@ -31,7 +31,6 @@ public:
     QWidget *centralWidget;
     QPushButton *Quit;
     QLabel *label_status;
-    QLabel *label_data;
     QPushButton *pushButton;
     QPushButton *pushButton_Login;
     QLineEdit *lineEdit_username;
@@ -58,9 +57,6 @@ public:
         label_status->setGeometry(QRect(20, 200, 321, 21));
         label_status->setFrameShape(QFrame::Box);
         label_status->setFrameShadow(QFrame::Raised);
-        label_data = new QLabel(centralWidget);
-        label_data->setObjectName(QStringLiteral("label_data"));
-        label_data->setGeometry(QRect(20, 180, 251, 16));
         pushButton = new QPushButton(centralWidget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
         pushButton->setGeometry(QRect(260, 270, 81, 31));
@@ -75,10 +71,10 @@ public:
         lineEdit_username->setGeometry(QRect(170, 60, 131, 24));
         label_username = new QLabel(centralWidget);
         label_username->setObjectName(QStringLiteral("label_username"));
-        label_username->setGeometry(QRect(60, 60, 71, 21));
+        label_username->setGeometry(QRect(10, 60, 121, 21));
         label_passwd = new QLabel(centralWidget);
         label_passwd->setObjectName(QStringLiteral("label_passwd"));
-        label_passwd->setGeometry(QRect(60, 100, 71, 21));
+        label_passwd->setGeometry(QRect(10, 100, 121, 21));
         lineEdit_password = new QLineEdit(centralWidget);
         lineEdit_password->setObjectName(QStringLiteral("lineEdit_password"));
         lineEdit_password->setGeometry(QRect(170, 100, 131, 24));
@@ -106,12 +102,11 @@ public:
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", Q_NULLPTR));
         Quit->setText(QApplication::translate("MainWindow", "Zako\305\204cz", Q_NULLPTR));
         label_status->setText(QApplication::translate("MainWindow", "[+]Status", Q_NULLPTR));
-        label_data->setText(QApplication::translate("MainWindow", "data", Q_NULLPTR));
         pushButton->setText(QApplication::translate("MainWindow", "back", Q_NULLPTR));
-        pushButton_Login->setText(QApplication::translate("MainWindow", "Login", Q_NULLPTR));
+        pushButton_Login->setText(QApplication::translate("MainWindow", "Zaloguj", Q_NULLPTR));
         lineEdit_username->setText(QString());
-        label_username->setText(QApplication::translate("MainWindow", "Username", Q_NULLPTR));
-        label_passwd->setText(QApplication::translate("MainWindow", "Password", Q_NULLPTR));
+        label_username->setText(QApplication::translate("MainWindow", "Nazwa u\305\274ykownika", Q_NULLPTR));
+        label_passwd->setText(QApplication::translate("MainWindow", "Has\305\202o u\305\274ytkownika", Q_NULLPTR));
     } // retranslateUi
 
 };

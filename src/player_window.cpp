@@ -202,12 +202,13 @@ void player_window::dropEvent(QDropEvent *event){
     urls = event->mimeData()->urls();
     for( i = urls.begin(); i!= urls.end(); ++i){
         nombreArch = i->fileName();
-        music_path = i->path();
+        //music_path = i->path();
         ui->listWidget->addItem(nombreArch);
+        playlist->addMedia(QUrl::fromLocalFile(i->path()));
     }
     //playlist->addMedia(QUrl(i->path()));
 
-    playlist->addMedia(QUrl::fromLocalFile(music_path));
+    //playlist->addMedia(QUrl::fromLocalFile(music_path));
 
 }
 
@@ -218,6 +219,13 @@ void player_window::dropEvent(QDropEvent *event){
 void player_window::on_pushButton_next_clicked()
 {
     playlist->next();
+
+    ui->label_info_musicgenere->setText(player->metaData(QMediaMetaData::MediaType).toString());
+    ui->label_info_album->setText(player->metaData(QMediaMetaData::Title).toString());
+    ui->label_info_artist->setText(player->metaData(QMediaMetaData::AlbumTitle).toString());
+    //ui->label_info_artist->setText(player->metaData(QMediaMetaData::AlbumArtist).toString());
+    ui->label_info_title->setText(player->metaData(QMediaMetaData::Lyrics).toString());
+
 
 }
 
