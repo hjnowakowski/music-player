@@ -73,7 +73,6 @@ void MainWindow::on_pushButton_Login_clicked()
         }
         if(count==1){
             ui->label_status->setText("username and password are correct!😺");
-              //TODO zaakceptowane wartości muszą iść "dalej" do playera, może zrobić je jakoś publicznymi
             g_username = username;
             hide();
             playerwindow = new player_window(this);

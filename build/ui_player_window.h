@@ -13,6 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
@@ -30,22 +31,34 @@ class Ui_player_window
 {
 public:
     QWidget *centralwidget;
-    QLabel *label_3;
     QListWidget *listWidget;
     QLineEdit *lineEdit;
     QPushButton *pushButton_3;
     QPushButton *pushButton_4;
     QLabel *label_4;
     QSlider *horizontalSlider_progress;
-    QLabel *label;
-    QSlider *horizontalSlider_volume;
-    QLabel *label_2;
     QPushButton *pushButton;
     QPushButton *pushButton_5;
     QPushButton *pushButton_2;
-    QLabel *label_username;
     QPushButton *pushButton_pause;
     QPushButton *pushButton_6;
+    QPushButton *pushButton_next;
+    QPushButton *pushButton_prev;
+    QPushButton *pushButton_setplaylist;
+    QWidget *widget;
+    QHBoxLayout *horizontalLayout;
+    QLabel *label_8;
+    QLabel *label_username;
+    QWidget *widget1;
+    QHBoxLayout *horizontalLayout_2;
+    QLabel *label_info_title;
+    QLabel *label_info_album;
+    QLabel *label_info_artist;
+    QLabel *label_info_musicgenere;
+    QWidget *widget2;
+    QHBoxLayout *horizontalLayout_3;
+    QLabel *label_2;
+    QSlider *horizontalSlider_volume;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -53,68 +66,124 @@ public:
     {
         if (player_window->objectName().isEmpty())
             player_window->setObjectName(QStringLiteral("player_window"));
-        player_window->resize(580, 427);
+        player_window->resize(743, 562);
         centralwidget = new QWidget(player_window);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
-        label_3 = new QLabel(centralwidget);
-        label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(10, 350, 241, 16));
         listWidget = new QListWidget(centralwidget);
         listWidget->setObjectName(QStringLiteral("listWidget"));
-        listWidget->setGeometry(QRect(20, 10, 251, 261));
+        listWidget->setGeometry(QRect(70, 70, 261, 271));
+        listWidget->setDragEnabled(true);
+        listWidget->setDragDropOverwriteMode(true);
+        listWidget->setDragDropMode(QAbstractItemView::DragDrop);
+        listWidget->setDefaultDropAction(Qt::MoveAction);
         lineEdit = new QLineEdit(centralwidget);
         lineEdit->setObjectName(QStringLiteral("lineEdit"));
-        lineEdit->setGeometry(QRect(310, 60, 113, 24));
+        lineEdit->setGeometry(QRect(600, 50, 113, 24));
         pushButton_3 = new QPushButton(centralwidget);
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
-        pushButton_3->setGeometry(QRect(320, 20, 80, 24));
+        pushButton_3->setGeometry(QRect(640, 10, 80, 24));
         pushButton_4 = new QPushButton(centralwidget);
         pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
-        pushButton_4->setGeometry(QRect(310, 100, 80, 24));
+        pushButton_4->setGeometry(QRect(380, 170, 80, 24));
         label_4 = new QLabel(centralwidget);
         label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setGeometry(QRect(340, 210, 60, 16));
+        label_4->setGeometry(QRect(10, 90, 60, 16));
         horizontalSlider_progress = new QSlider(centralwidget);
         horizontalSlider_progress->setObjectName(QStringLiteral("horizontalSlider_progress"));
-        horizontalSlider_progress->setGeometry(QRect(10, 320, 341, 20));
+        horizontalSlider_progress->setGeometry(QRect(10, 490, 491, 20));
         horizontalSlider_progress->setMouseTracking(false);
         horizontalSlider_progress->setAcceptDrops(false);
         horizontalSlider_progress->setOrientation(Qt::Horizontal);
         horizontalSlider_progress->setInvertedAppearance(false);
-        label = new QLabel(centralwidget);
-        label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(10, 300, 60, 16));
-        horizontalSlider_volume = new QSlider(centralwidget);
-        horizontalSlider_volume->setObjectName(QStringLiteral("horizontalSlider_volume"));
-        horizontalSlider_volume->setGeometry(QRect(370, 350, 160, 16));
-        horizontalSlider_volume->setValue(99);
-        horizontalSlider_volume->setOrientation(Qt::Horizontal);
-        label_2 = new QLabel(centralwidget);
-        label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(310, 350, 60, 16));
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
         pushButton->setEnabled(true);
-        pushButton->setGeometry(QRect(380, 260, 80, 24));
+        pushButton->setGeometry(QRect(510, 450, 80, 24));
         pushButton_5 = new QPushButton(centralwidget);
         pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
-        pushButton_5->setGeometry(QRect(380, 320, 80, 24));
+        pushButton_5->setGeometry(QRect(510, 480, 80, 24));
         pushButton_2 = new QPushButton(centralwidget);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(180, 340, 111, 24));
-        label_username = new QLabel(centralwidget);
-        label_username->setObjectName(QStringLiteral("label_username"));
-        label_username->setGeometry(QRect(430, 0, 141, 16));
+        pushButton_2->setGeometry(QRect(610, 310, 111, 24));
         pushButton_pause = new QPushButton(centralwidget);
         pushButton_pause->setObjectName(QStringLiteral("pushButton_pause"));
-        pushButton_pause->setGeometry(QRect(380, 290, 80, 24));
+        pushButton_pause->setGeometry(QRect(600, 450, 80, 24));
         pushButton_6 = new QPushButton(centralwidget);
         pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
-        pushButton_6->setGeometry(QRect(420, 170, 121, 24));
+        pushButton_6->setGeometry(QRect(600, 480, 81, 24));
+        pushButton_next = new QPushButton(centralwidget);
+        pushButton_next->setObjectName(QStringLiteral("pushButton_next"));
+        pushButton_next->setGeometry(QRect(690, 450, 41, 24));
+        pushButton_prev = new QPushButton(centralwidget);
+        pushButton_prev->setObjectName(QStringLiteral("pushButton_prev"));
+        pushButton_prev->setGeometry(QRect(690, 480, 41, 24));
+        pushButton_setplaylist = new QPushButton(centralwidget);
+        pushButton_setplaylist->setObjectName(QStringLiteral("pushButton_setplaylist"));
+        pushButton_setplaylist->setGeometry(QRect(600, 230, 80, 24));
+        widget = new QWidget(centralwidget);
+        widget->setObjectName(QStringLiteral("widget"));
+        widget->setGeometry(QRect(270, 20, 193, 18));
+        horizontalLayout = new QHBoxLayout(widget);
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
+        label_8 = new QLabel(widget);
+        label_8->setObjectName(QStringLiteral("label_8"));
+
+        horizontalLayout->addWidget(label_8);
+
+        label_username = new QLabel(widget);
+        label_username->setObjectName(QStringLiteral("label_username"));
+
+        horizontalLayout->addWidget(label_username);
+
+        widget1 = new QWidget(centralwidget);
+        widget1->setObjectName(QStringLiteral("widget1"));
+        widget1->setGeometry(QRect(10, 460, 481, 18));
+        horizontalLayout_2 = new QHBoxLayout(widget1);
+        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
+        horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
+        label_info_title = new QLabel(widget1);
+        label_info_title->setObjectName(QStringLiteral("label_info_title"));
+
+        horizontalLayout_2->addWidget(label_info_title);
+
+        label_info_album = new QLabel(widget1);
+        label_info_album->setObjectName(QStringLiteral("label_info_album"));
+
+        horizontalLayout_2->addWidget(label_info_album);
+
+        label_info_artist = new QLabel(widget1);
+        label_info_artist->setObjectName(QStringLiteral("label_info_artist"));
+
+        horizontalLayout_2->addWidget(label_info_artist);
+
+        label_info_musicgenere = new QLabel(widget1);
+        label_info_musicgenere->setObjectName(QStringLiteral("label_info_musicgenere"));
+
+        horizontalLayout_2->addWidget(label_info_musicgenere);
+
+        widget2 = new QWidget(centralwidget);
+        widget2->setObjectName(QStringLiteral("widget2"));
+        widget2->setGeometry(QRect(440, 420, 231, 18));
+        horizontalLayout_3 = new QHBoxLayout(widget2);
+        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
+        horizontalLayout_3->setContentsMargins(0, 0, 0, 0);
+        label_2 = new QLabel(widget2);
+        label_2->setObjectName(QStringLiteral("label_2"));
+
+        horizontalLayout_3->addWidget(label_2);
+
+        horizontalSlider_volume = new QSlider(widget2);
+        horizontalSlider_volume->setObjectName(QStringLiteral("horizontalSlider_volume"));
+        horizontalSlider_volume->setValue(99);
+        horizontalSlider_volume->setOrientation(Qt::Horizontal);
+
+        horizontalLayout_3->addWidget(horizontalSlider_volume);
+
         player_window->setCentralWidget(centralwidget);
         menubar = new QMenuBar(player_window);
         menubar->setObjectName(QStringLiteral("menubar"));
-        menubar->setGeometry(QRect(0, 0, 580, 22));
+        menubar->setGeometry(QRect(0, 0, 743, 22));
         player_window->setMenuBar(menubar);
         statusbar = new QStatusBar(player_window);
         statusbar->setObjectName(QStringLiteral("statusbar"));
@@ -128,18 +197,24 @@ public:
     void retranslateUi(QMainWindow *player_window)
     {
         player_window->setWindowTitle(QApplication::translate("player_window", "Music Player", Q_NULLPTR));
-        label_3->setText(QApplication::translate("player_window", "TextLabel", Q_NULLPTR));
         pushButton_3->setText(QApplication::translate("player_window", "open", Q_NULLPTR));
         pushButton_4->setText(QApplication::translate("player_window", "delete", Q_NULLPTR));
         label_4->setText(QApplication::translate("player_window", "name", Q_NULLPTR));
-        label->setText(QApplication::translate("player_window", "Progress", Q_NULLPTR));
-        label_2->setText(QApplication::translate("player_window", "Volume", Q_NULLPTR));
-        pushButton->setText(QApplication::translate("player_window", "Start", Q_NULLPTR));
+        pushButton->setText(QApplication::translate("player_window", "Play", Q_NULLPTR));
         pushButton_5->setText(QApplication::translate("player_window", "Stop", Q_NULLPTR));
         pushButton_2->setText(QApplication::translate("player_window", "Song info", Q_NULLPTR));
-        label_username->setText(QApplication::translate("player_window", "username", Q_NULLPTR));
         pushButton_pause->setText(QApplication::translate("player_window", "Pause", Q_NULLPTR));
         pushButton_6->setText(QApplication::translate("player_window", "Play from pause", Q_NULLPTR));
+        pushButton_next->setText(QApplication::translate("player_window", "Next", Q_NULLPTR));
+        pushButton_prev->setText(QApplication::translate("player_window", "Prev", Q_NULLPTR));
+        pushButton_setplaylist->setText(QApplication::translate("player_window", "Set playlist", Q_NULLPTR));
+        label_8->setText(QApplication::translate("player_window", "Aktualny u\305\274ytkownik", Q_NULLPTR));
+        label_username->setText(QApplication::translate("player_window", "username", Q_NULLPTR));
+        label_info_title->setText(QApplication::translate("player_window", "title", Q_NULLPTR));
+        label_info_album->setText(QApplication::translate("player_window", "album", Q_NULLPTR));
+        label_info_artist->setText(QApplication::translate("player_window", "artist", Q_NULLPTR));
+        label_info_musicgenere->setText(QApplication::translate("player_window", "musicgenere", Q_NULLPTR));
+        label_2->setText(QApplication::translate("player_window", "Volume", Q_NULLPTR));
     } // retranslateUi
 
 };

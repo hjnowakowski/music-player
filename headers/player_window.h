@@ -54,6 +54,12 @@ private slots:
 
     void song_info();
 
+    void on_pushButton_next_clicked();
+
+    void on_pushButton_prev_clicked();
+
+    void on_pushButton_setplaylist_clicked();
+
 private:
     Ui::player_window *ui;
     QMediaPlayer* player;

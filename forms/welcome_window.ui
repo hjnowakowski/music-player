@@ -77,6 +77,19 @@
         <string>Zakończ</string>
        </property>
       </widget>
+      <widget class="QPushButton" name="pushButton">
+       <property name="geometry">
+        <rect>
+         <x>170</x>
+         <y>290</y>
+         <width>80</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>player, test</string>
+       </property>
+      </widget>
      </widget>
     </item>
    </layout>

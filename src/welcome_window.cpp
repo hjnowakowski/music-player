@@ -50,5 +50,7 @@ void welcome_window::on_pushButton_dragndrop_clicked()
 
 void welcome_window::on_pushButton_clicked()
 {
-
+    hide();
+    playerwindow = new player_window(this);
+    playerwindow->show();
 }

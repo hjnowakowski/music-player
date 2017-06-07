@@ -35,6 +35,7 @@ public:
     QPushButton *button_login;
     QPushButton *button_signin;
     QPushButton *Quit;
+    QPushButton *pushButton;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -68,6 +69,9 @@ public:
         Quit->setObjectName(QStringLiteral("Quit"));
         Quit->setGeometry(QRect(270, 480, 91, 31));
         Quit->setCursor(QCursor(Qt::ArrowCursor));
+        pushButton = new QPushButton(groupBox);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setGeometry(QRect(170, 290, 80, 24));
 
         horizontalLayout->addWidget(groupBox);
 
@@ -93,6 +97,7 @@ public:
         button_login->setText(QApplication::translate("welcome_window", "log in", Q_NULLPTR));
         button_signin->setText(QApplication::translate("welcome_window", "sign in", Q_NULLPTR));
         Quit->setText(QApplication::translate("welcome_window", "Zako\305\204cz", Q_NULLPTR));
+        pushButton->setText(QApplication::translate("welcome_window", "player, test", Q_NULLPTR));
     } // retranslateUi
 
 };
