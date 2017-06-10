@@ -45,17 +45,17 @@ public:
     QPushButton *pushButton_next;
     QPushButton *pushButton_prev;
     QPushButton *pushButton_setplaylist;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout;
     QLabel *label_8;
     QLabel *label_username;
-    QWidget *widget1;
+    QWidget *layoutWidget1;
     QHBoxLayout *horizontalLayout_2;
     QLabel *label_info_title;
     QLabel *label_info_album;
     QLabel *label_info_artist;
     QLabel *label_info_musicgenere;
-    QWidget *widget2;
+    QWidget *layoutWidget2;
     QHBoxLayout *horizontalLayout_3;
     QLabel *label_2;
     QSlider *horizontalSlider_volume;
@@ -100,7 +100,7 @@ public:
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
         pushButton->setEnabled(true);
-        pushButton->setGeometry(QRect(510, 450, 80, 24));
+        pushButton->setGeometry(QRect(510, 140, 80, 24));
         pushButton_5 = new QPushButton(centralwidget);
         pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
         pushButton_5->setGeometry(QRect(510, 480, 80, 24));
@@ -112,7 +112,7 @@ public:
         pushButton_pause->setGeometry(QRect(600, 450, 80, 24));
         pushButton_6 = new QPushButton(centralwidget);
         pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
-        pushButton_6->setGeometry(QRect(600, 480, 81, 24));
+        pushButton_6->setGeometry(QRect(510, 450, 81, 24));
         pushButton_next = new QPushButton(centralwidget);
         pushButton_next->setObjectName(QStringLiteral("pushButton_next"));
         pushButton_next->setGeometry(QRect(690, 450, 41, 24));
@@ -122,60 +122,60 @@ public:
         pushButton_setplaylist = new QPushButton(centralwidget);
         pushButton_setplaylist->setObjectName(QStringLiteral("pushButton_setplaylist"));
         pushButton_setplaylist->setGeometry(QRect(600, 230, 80, 24));
-        widget = new QWidget(centralwidget);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(270, 20, 193, 18));
-        horizontalLayout = new QHBoxLayout(widget);
+        layoutWidget = new QWidget(centralwidget);
+        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setGeometry(QRect(270, 20, 193, 18));
+        horizontalLayout = new QHBoxLayout(layoutWidget);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        label_8 = new QLabel(widget);
+        label_8 = new QLabel(layoutWidget);
         label_8->setObjectName(QStringLiteral("label_8"));
 
         horizontalLayout->addWidget(label_8);
 
-        label_username = new QLabel(widget);
+        label_username = new QLabel(layoutWidget);
         label_username->setObjectName(QStringLiteral("label_username"));
 
         horizontalLayout->addWidget(label_username);
 
-        widget1 = new QWidget(centralwidget);
-        widget1->setObjectName(QStringLiteral("widget1"));
-        widget1->setGeometry(QRect(10, 460, 481, 18));
-        horizontalLayout_2 = new QHBoxLayout(widget1);
+        layoutWidget1 = new QWidget(centralwidget);
+        layoutWidget1->setObjectName(QStringLiteral("layoutWidget1"));
+        layoutWidget1->setGeometry(QRect(10, 460, 481, 18));
+        horizontalLayout_2 = new QHBoxLayout(layoutWidget1);
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
         horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
-        label_info_title = new QLabel(widget1);
+        label_info_title = new QLabel(layoutWidget1);
         label_info_title->setObjectName(QStringLiteral("label_info_title"));
 
         horizontalLayout_2->addWidget(label_info_title);
 
-        label_info_album = new QLabel(widget1);
+        label_info_album = new QLabel(layoutWidget1);
         label_info_album->setObjectName(QStringLiteral("label_info_album"));
 
         horizontalLayout_2->addWidget(label_info_album);
 
-        label_info_artist = new QLabel(widget1);
+        label_info_artist = new QLabel(layoutWidget1);
         label_info_artist->setObjectName(QStringLiteral("label_info_artist"));
 
         horizontalLayout_2->addWidget(label_info_artist);
 
-        label_info_musicgenere = new QLabel(widget1);
+        label_info_musicgenere = new QLabel(layoutWidget1);
         label_info_musicgenere->setObjectName(QStringLiteral("label_info_musicgenere"));
 
         horizontalLayout_2->addWidget(label_info_musicgenere);
 
-        widget2 = new QWidget(centralwidget);
-        widget2->setObjectName(QStringLiteral("widget2"));
-        widget2->setGeometry(QRect(440, 420, 231, 18));
-        horizontalLayout_3 = new QHBoxLayout(widget2);
+        layoutWidget2 = new QWidget(centralwidget);
+        layoutWidget2->setObjectName(QStringLiteral("layoutWidget2"));
+        layoutWidget2->setGeometry(QRect(440, 420, 231, 18));
+        horizontalLayout_3 = new QHBoxLayout(layoutWidget2);
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
         horizontalLayout_3->setContentsMargins(0, 0, 0, 0);
-        label_2 = new QLabel(widget2);
+        label_2 = new QLabel(layoutWidget2);
         label_2->setObjectName(QStringLiteral("label_2"));
 
         horizontalLayout_3->addWidget(label_2);
 
-        horizontalSlider_volume = new QSlider(widget2);
+        horizontalSlider_volume = new QSlider(layoutWidget2);
         horizontalSlider_volume->setObjectName(QStringLiteral("horizontalSlider_volume"));
         horizontalSlider_volume->setValue(99);
         horizontalSlider_volume->setOrientation(Qt::Horizontal);

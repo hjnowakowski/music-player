@@ -105,7 +105,7 @@ background-color: hex(#616161);</string>
     <property name="geometry">
      <rect>
       <x>510</x>
-      <y>450</y>
+      <y>140</y>
       <width>80</width>
       <height>24</height>
      </rect>
@@ -156,8 +156,8 @@ background-color: hex(#616161);</string>
    <widget class="QPushButton" name="pushButton_6">
     <property name="geometry">
      <rect>
-      <x>600</x>
-      <y>480</y>
+      <x>510</x>
+      <y>450</y>
       <width>81</width>
       <height>24</height>
      </rect>
@@ -205,7 +205,7 @@ background-color: hex(#616161);</string>
      <string>Set playlist</string>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>270</x>
@@ -231,7 +231,7 @@ background-color: hex(#616161);</string>
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -271,7 +271,7 @@ background-color: hex(#616161);</string>
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>440</x>

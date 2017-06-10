@@ -28,6 +28,8 @@ player_window::player_window(QWidget *parent) :
     player = new QMediaPlayer(this);
     playlist = new QMediaPlaylist(this);
     player->setPlaylist(playlist);
+    //song_info();
+
 
     connect(player, &QMediaPlayer::positionChanged, this, &player_window::on_positionChanged);
     connect(player, &QMediaPlayer::durationChanged, this, &player_window::on_durationChanged);
@@ -49,6 +51,11 @@ player_window::player_window(QWidget *parent) :
     std::cout << "player_window window is opened" << std::endl;
 
 
+    ui->label_info_musicgenere->setText(player->metaData(QMediaMetaData::MediaType).toString());
+    ui->label_info_album->setText(player->metaData(QMediaMetaData::Title).toString());
+    ui->label_info_artist->setText(player->metaData(QMediaMetaData::AlbumTitle).toString());
+    //ui->label_info_artist->setText(player->metaData(QMediaMetaData::AlbumArtist).toString());
+    ui->label_info_title->setText(player->metaData(QMediaMetaData::Lyrics).toString());
 }
 
 player_window::~player_window()
@@ -124,6 +131,17 @@ void player_window::on_pushButton_pause_clicked()
 void player_window::on_pushButton_6_clicked()
 {
     player->play();  //play from pause
+
+
+    //song_info();
+
+
+    ui->label_info_musicgenere->setText(player->metaData(QMediaMetaData::MediaType).toString());
+    ui->label_info_album->setText(player->metaData(QMediaMetaData::Title).toString());
+    ui->label_info_artist->setText(player->metaData(QMediaMetaData::AlbumTitle).toString());
+    //ui->label_info_artist->setText(player->metaData(QMediaMetaData::AlbumArtist).toString());
+    ui->label_info_title->setText(player->metaData(QMediaMetaData::Lyrics).toString());
+
 }
 
 

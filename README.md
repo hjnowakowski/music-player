@@ -1,5 +1,3 @@
-## Welcome in projekt1
-
 Główna idea projektu: odtwarzacz muzyczny, dla każdego użytkownika sugerowane utwory 🤓
 
 Piszemy w **c++**, korzystamy z **qt** i **sqlite-a**.
@@ -19,6 +17,7 @@ Download list:
 **Szukajcie najbardziej aktualnych plików w branchach, aktualnie pracuję nad begin_window (ekran powitalny + logowanie się + rejestrowanie się).**
 
 **Poniżej znajduje się schemat naszego projektu**
+
 
 ![](https://github.com/hjnowakowski/projekt1/blob/player/project_schemes/project_scheme.png)
 
