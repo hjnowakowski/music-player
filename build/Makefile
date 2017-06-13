@@ -1015,7 +1015,9 @@ player_window.o: ../src/player_window.cpp ../headers/player_window.h \
 		../../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/QMimeData \
 		../../../Qt/5.8/clang_64/lib/QtCore.framework/Headers/qmimedata.h \
 		../../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/QMediaPlaylist \
-		../../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediaplaylist.h
+		../../../Qt/5.8/clang_64/lib/QtMultimedia.framework/Headers/qmediaplaylist.h \
+		../../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/QFileDialog \
+		../../../Qt/5.8/clang_64/lib/QtWidgets.framework/Headers/qfiledialog.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o player_window.o ../src/player_window.cpp
 
 global.o: ../src/global.cpp ../headers/global.h \
