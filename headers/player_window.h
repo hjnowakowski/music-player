@@ -60,6 +60,10 @@ private slots:
 
     void on_pushButton_setplaylist_clicked();
 
+    void on_pushButton_save_playlist_clicked();
+
+    void on_pushButton_open_playlist_clicked();
+
 private:
     Ui::player_window *ui;
     QMediaPlayer* player;

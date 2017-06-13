@@ -59,6 +59,8 @@ public:
     QHBoxLayout *horizontalLayout_3;
     QLabel *label_2;
     QSlider *horizontalSlider_volume;
+    QPushButton *pushButton_save_playlist;
+    QPushButton *pushButton_open_playlist;
     QMenuBar *menubar;
     QStatusBar *statusbar;
     QToolBar *toolBar;
@@ -182,6 +184,12 @@ public:
 
         horizontalLayout_3->addWidget(horizontalSlider_volume);
 
+        pushButton_save_playlist = new QPushButton(centralwidget);
+        pushButton_save_playlist->setObjectName(QStringLiteral("pushButton_save_playlist"));
+        pushButton_save_playlist->setGeometry(QRect(380, 220, 91, 24));
+        pushButton_open_playlist = new QPushButton(centralwidget);
+        pushButton_open_playlist->setObjectName(QStringLiteral("pushButton_open_playlist"));
+        pushButton_open_playlist->setGeometry(QRect(380, 260, 91, 24));
         player_window->setCentralWidget(centralwidget);
         menubar = new QMenuBar(player_window);
         menubar->setObjectName(QStringLiteral("menubar"));
@@ -225,6 +233,8 @@ public:
         label_info_artist->setText(QApplication::translate("player_window", "artist", Q_NULLPTR));
         label_info_musicgenere->setText(QApplication::translate("player_window", "musicgenere", Q_NULLPTR));
         label_2->setText(QApplication::translate("player_window", "Volume", Q_NULLPTR));
+        pushButton_save_playlist->setText(QApplication::translate("player_window", "save playlist", Q_NULLPTR));
+        pushButton_open_playlist->setText(QApplication::translate("player_window", "open playlist", Q_NULLPTR));
         toolBar->setWindowTitle(QApplication::translate("player_window", "toolBar", Q_NULLPTR));
         toolBar_2->setWindowTitle(QApplication::translate("player_window", "toolBar_2", Q_NULLPTR));
         toolBar_3->setWindowTitle(QApplication::translate("player_window", "toolBar_3", Q_NULLPTR));

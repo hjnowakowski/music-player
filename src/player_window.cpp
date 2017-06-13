@@ -11,6 +11,10 @@
 #include <QMimeData>
 #include <QMediaPlaylist>
 
+//zapis:
+#include <QFileDialog>
+#include <QDebug>
+
 //Do testowania:
 #include <iostream>
 #include <string>
@@ -56,6 +60,20 @@ player_window::player_window(QWidget *parent) :
     ui->label_info_artist->setText(player->metaData(QMediaMetaData::AlbumTitle).toString());
     //ui->label_info_artist->setText(player->metaData(QMediaMetaData::AlbumArtist).toString());
     ui->label_info_title->setText(player->metaData(QMediaMetaData::Lyrics).toString());
+
+
+    QString x = QDir::currentPath();
+    QString y = "/playlist/playlist.txt";
+
+        //QString fn=QFileDialog::getSaveFileName(this,"Save file",QDir::currentPath(),"Text files (.txt);;All files (.*)");
+
+
+    x.append(y);
+    std::string path = x.toUtf8().constData();
+
+
+
+    std::cout << path << std::endl;
 }
 
 player_window::~player_window()
@@ -81,7 +99,9 @@ void player_window::on_horizontalSlider_volume_sliderMoved(int position)
 void player_window::on_pushButton_clicked()
 {
     std::cout << "Play button pressed" << std::endl;
-    player->setMedia(QUrl::fromLocalFile(music_path));
+    QString music_apth2 = "/Users/henryknowakowski/Desktop/Taco Hemingway - Wszystko Jedno.mp3";
+    music_apth2.remove("file://");
+    player->setMedia(QUrl::fromLocalFile(music_apth2));
 
     std::string a;
 
@@ -255,4 +275,60 @@ void player_window::on_pushButton_prev_clicked()
 void player_window::on_pushButton_setplaylist_clicked()
 {
     player->setPlaylist(playlist);
+}
+
+
+
+//playlist
+
+
+
+
+void player_window::on_pushButton_save_playlist_clicked()
+{
+    QString x = QDir::currentPath();
+    QString y = "/playlist/playlist.txt";
+    x.append(y);
+    //QString path1 = QDir::currentPath()+"/playlist/playlist.txt";
+
+    QString fn=QFileDialog::getSaveFileName(this,"Save file",QDir::currentPath(),"Text files (.txt);;All files (.*)");
+
+    std::string path = fn.toUtf8().constData();
+    std::cout << path << std::endl;
+
+    //std::string path = x.toUtf8().constData();
+    //std::cout << path << std::endl;
+
+
+    if(playlist->save(QUrl::fromLocalFile(x),"m3u")){
+        std::cout << "Playlist saved succesfully" << std::endl;
+    }
+
+
+    //qDebug() << ;
+
+    //delete QMediaPlaylist;
+}
+
+void player_window::on_pushButton_open_playlist_clicked()
+{
+    playlist->clear();
+    ui->listWidget->clear();
+
+    QString x = QDir::currentPath();
+    QString y = "/playlist/playlist.txt";
+    x.append(y);
+    QFile inputFile(x);
+    if (inputFile.open(QIODevice::ReadOnly))
+    {
+       QTextStream in(&inputFile);
+       while (!in.atEnd())
+       {
+          QString song = in.readLine();
+          song.remove("file://");
+          playlist->addMedia(QUrl::fromLocalFile(song));
+          ui->listWidget->addItem(QUrl(song).fileName());
+       }
+       inputFile.close();
+    }
 }

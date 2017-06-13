@@ -300,6 +300,32 @@ background-color: hex(#616161);</string>
      </item>
     </layout>
    </widget>
+   <widget class="QPushButton" name="pushButton_save_playlist">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>220</y>
+      <width>91</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>save playlist</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_open_playlist">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>260</y>
+      <width>91</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>open playlist</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
