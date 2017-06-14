@@ -96,37 +96,7 @@ void player_window::on_horizontalSlider_volume_sliderMoved(int position)
         player->setVolume(position);
 }
 
-void player_window::on_pushButton_clicked()
-{
-    std::cout << "Play button pressed" << std::endl;
-    QString music_apth2 = "/Users/henryknowakowski/Desktop/Taco Hemingway - Wszystko Jedno.mp3";
-    music_apth2.remove("file://");
-    player->setMedia(QUrl::fromLocalFile(music_apth2));
 
-    std::string a;
-
-    std::cout << player->metaData(QMediaMetaData::MediaType).toString().toStdString() << std::endl;
-
-    player->play();
-
-    qDebug() << player->errorString();
-
-    ui->label_info_musicgenere->setText(player->metaData(QMediaMetaData::MediaType).toString());
-
-    std::cout << player->metaData(QMediaMetaData::MediaType).toString().toStdString() << std::endl;
-
-    std::cout << "end of method" << std::endl;
-
-    //QString albumTitle = player->metaData(QMediaMetaData::AlbumTitle);
-    //std::cout << albumTitle << std::endl;
-    //ui->label_3->setText("Failed to open database");
-    //if (player->isMetaDataAvailable()) {
-        //ui->label_3->setText(player->metaData(QMediaMetaData::AlbumTitle).toString());
-        //ui->label_3->setText(player->metaData(QMediaMetaData::AlbumArtist).toString());
-      //}
-
-    song_info();
-}
 
 void player_window::on_positionChanged(qint64 position)
 {
@@ -165,55 +135,9 @@ void player_window::on_pushButton_6_clicked()
 }
 
 
-
-
-
-
-//Song info methods:
-
-void player_window::on_pushButton_2_clicked()
-{
-    ui->label_info_musicgenere->setText(player->metaData(QMediaMetaData::MediaType).toString());
-    ui->label_info_album->setText(player->metaData(QMediaMetaData::Title).toString());
-    ui->label_info_artist->setText(player->metaData(QMediaMetaData::AlbumTitle).toString());
-    //ui->label_info_artist->setText(player->metaData(QMediaMetaData::AlbumArtist).toString());
-    ui->label_info_title->setText(player->metaData(QMediaMetaData::Lyrics).toString());
-
-
-    //qDebug() << player->metaData(QMediaMetaData::Genre).toString();
-
-    std::cout << "song info button pressed" << std::endl;
-
-}
-
-
-
-
-
-void player_window::song_info(){
-    ui->label_info_musicgenere->setText(player->metaData(QMediaMetaData::MediaType).toString());
-    std::cout << player->metaData(QMediaMetaData::MediaType).toString().toStdString() << std::endl;
-}
-
-
-
-
-
-
 //drag n drop:
 
-void player_window::on_pushButton_3_clicked() //open
-{
-    std::cout << "Push button pressed" << std::endl;
 
-    QString name;
-    name = ui->lineEdit->text();
-
-    if(name.isEmpty())
-        return;
-    ui->listWidget->addItem(name);
-
-}
 
 void player_window::on_pushButton_4_clicked()  //delete
 {
@@ -272,11 +196,6 @@ void player_window::on_pushButton_prev_clicked()
     playlist->previous();
 }
 
-void player_window::on_pushButton_setplaylist_clicked()
-{
-    player->setPlaylist(playlist);
-}
-
 
 
 //playlist
@@ -287,14 +206,14 @@ void player_window::on_pushButton_setplaylist_clicked()
 void player_window::on_pushButton_save_playlist_clicked()
 {
     QString x = QDir::currentPath();
-    QString y = "/playlist/playlist.txt";
+    QString y = "/playlist/"+g_username+"playlist.txt";
     x.append(y);
     //QString path1 = QDir::currentPath()+"/playlist/playlist.txt";
 
-    QString fn=QFileDialog::getSaveFileName(this,"Save file",QDir::currentPath(),"Text files (.txt);;All files (.*)");
+    //QString fn=QFileDialog::getSaveFileName(this,"Save file",QDir::currentPath(),"Text files (.txt);;All files (.*)");
 
-    std::string path = fn.toUtf8().constData();
-    std::cout << path << std::endl;
+    //std::string path = fn.toUtf8().constData();
+    //std::cout << path << std::endl;
 
     //std::string path = x.toUtf8().constData();
     //std::cout << path << std::endl;
@@ -316,7 +235,7 @@ void player_window::on_pushButton_open_playlist_clicked()
     ui->listWidget->clear();
 
     QString x = QDir::currentPath();
-    QString y = "/playlist/playlist.txt";
+    QString y = "/playlist/"+g_username+"playlist.txt";
     x.append(y);
     QFile inputFile(x);
     if (inputFile.open(QIODevice::ReadOnly))

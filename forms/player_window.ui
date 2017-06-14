@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>743</width>
+    <width>492</width>
     <height>562</height>
    </rect>
   </property>
@@ -40,34 +40,11 @@ background-color: hex(#616161);</string>
      <enum>Qt::MoveAction</enum>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit">
-    <property name="geometry">
-     <rect>
-      <x>600</x>
-      <y>50</y>
-      <width>113</width>
-      <height>24</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_3">
-    <property name="geometry">
-     <rect>
-      <x>640</x>
-      <y>10</y>
-      <width>80</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>open</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="pushButton_4">
     <property name="geometry">
      <rect>
       <x>380</x>
-      <y>170</y>
+      <y>150</y>
       <width>80</width>
       <height>24</height>
      </rect>
@@ -98,28 +75,12 @@ background-color: hex(#616161);</string>
      <bool>false</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
-    <property name="enabled">
-     <bool>true</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>510</x>
-      <y>140</y>
-      <width>80</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Play</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="pushButton_5">
     <property name="geometry">
      <rect>
-      <x>510</x>
-      <y>480</y>
-      <width>80</width>
+      <x>300</x>
+      <y>410</y>
+      <width>51</width>
       <height>24</height>
      </rect>
     </property>
@@ -127,25 +88,12 @@ background-color: hex(#616161);</string>
      <string>Stop</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
-    <property name="geometry">
-     <rect>
-      <x>610</x>
-      <y>310</y>
-      <width>111</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Song info</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="pushButton_pause">
     <property name="geometry">
      <rect>
-      <x>600</x>
-      <y>450</y>
-      <width>80</width>
+      <x>430</x>
+      <y>370</y>
+      <width>51</width>
       <height>24</height>
      </rect>
     </property>
@@ -156,21 +104,21 @@ background-color: hex(#616161);</string>
    <widget class="QPushButton" name="pushButton_6">
     <property name="geometry">
      <rect>
-      <x>510</x>
-      <y>450</y>
-      <width>81</width>
+      <x>370</x>
+      <y>370</y>
+      <width>51</width>
       <height>24</height>
      </rect>
     </property>
     <property name="text">
-     <string>Play from pause</string>
+     <string>Play</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_next">
     <property name="geometry">
      <rect>
-      <x>690</x>
-      <y>450</y>
+      <x>380</x>
+      <y>410</y>
       <width>41</width>
       <height>24</height>
      </rect>
@@ -182,8 +130,8 @@ background-color: hex(#616161);</string>
    <widget class="QPushButton" name="pushButton_prev">
     <property name="geometry">
      <rect>
-      <x>690</x>
-      <y>480</y>
+      <x>430</x>
+      <y>410</y>
       <width>41</width>
       <height>24</height>
      </rect>
@@ -192,23 +140,10 @@ background-color: hex(#616161);</string>
      <string>Prev</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_setplaylist">
-    <property name="geometry">
-     <rect>
-      <x>600</x>
-      <y>230</y>
-      <width>80</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Set playlist</string>
-    </property>
-   </widget>
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>270</x>
+      <x>100</x>
       <y>20</y>
       <width>193</width>
       <height>18</height>
@@ -274,8 +209,8 @@ background-color: hex(#616161);</string>
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>440</x>
-      <y>420</y>
+      <x>10</x>
+      <y>430</y>
       <width>231</width>
       <height>18</height>
      </rect>
@@ -304,7 +239,7 @@ background-color: hex(#616161);</string>
     <property name="geometry">
      <rect>
       <x>380</x>
-      <y>220</y>
+      <y>80</y>
       <width>91</width>
       <height>24</height>
      </rect>
@@ -317,7 +252,7 @@ background-color: hex(#616161);</string>
     <property name="geometry">
      <rect>
       <x>380</x>
-      <y>260</y>
+      <y>110</y>
       <width>91</width>
       <height>24</height>
      </rect>
@@ -332,7 +267,7 @@ background-color: hex(#616161);</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>743</width>
+     <width>492</width>
      <height>22</height>
     </rect>
    </property>

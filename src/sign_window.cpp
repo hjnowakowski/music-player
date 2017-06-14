@@ -14,11 +14,13 @@ signingWindow::signingWindow(QWidget *parent) :
     ui->setupUi(this);
 
     users_db= QSqlDatabase::addDatabase("QSQLITE");
-    users_db.setDatabaseName("/Users/henryknowakowski/projekt/projekt1/db/users.db");
 
-    //dir to db is different on your devices, to make it easy to paste, comment your own below
+    QString x = QDir::currentPath();
+    QString y = "/db/users.db";
+    x.append(y);
 
-    //Users/henryknowakowski/Projekt2_rozgrzewka2/users.db  Henryk Nowakowski
+
+    users_db.setDatabaseName(x);
 
 
     if(!users_db.open())

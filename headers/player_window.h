@@ -34,15 +34,9 @@ private slots:
 
     void on_horizontalSlider_volume_sliderMoved(int position);
 
-    void on_pushButton_clicked();
-
-    void on_pushButton_2_clicked();
-
     void on_positionChanged(qint64 position);
 
     void on_durationChanged(qint64 position);
-
-    void on_pushButton_3_clicked();
 
     void on_pushButton_4_clicked();
 
@@ -52,13 +46,9 @@ private slots:
 
     void on_pushButton_6_clicked();
 
-    void song_info();
-
     void on_pushButton_next_clicked();
 
     void on_pushButton_prev_clicked();
-
-    void on_pushButton_setplaylist_clicked();
 
     void on_pushButton_save_playlist_clicked();
 
