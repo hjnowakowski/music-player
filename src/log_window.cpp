@@ -17,6 +17,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QString x = QDir::currentPath();
     QString y = "/db/users.db";
     x.append(y);
+    QTextStream(stdout) << "path to db" + x;
 
 
     users_db.setDatabaseName(x);

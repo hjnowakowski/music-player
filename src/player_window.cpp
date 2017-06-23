@@ -187,6 +187,7 @@ void player_window::on_pushButton_save_playlist_clicked()
     QString x = QDir::currentPath();
     QString y = "/playlist/"+g_username+"playlist.txt";
     x.append(y);
+    QTextStream(stdout) << "path to playlist" + x;
     if(playlist->save(QUrl::fromLocalFile(x),"m3u")){
         std::cout << "Playlist saved succesfully" << std::endl;
     }

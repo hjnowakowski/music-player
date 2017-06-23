@@ -15,6 +15,7 @@ signingWindow::signingWindow(QWidget *parent) :
     QString x = QDir::currentPath();
     QString y = "/db/users.db";
     x.append(y);
+    QTextStream(stdout) << "path to db" + x;
 
     users_db.setDatabaseName(x);
 
@@ -43,7 +44,7 @@ void signingWindow::on_pushButton_signin_clicked()
         return;
     }
 
-    if(age<=13){
+    if(age<="13"){
         ui->label_status->setText("You have to be at least 13 years to sign in😺");
         return;
     }
