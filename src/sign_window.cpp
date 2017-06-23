@@ -4,9 +4,6 @@
 #include "headers/global.h"
 
 
-
-
-
 signingWindow::signingWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::signingWindow)
@@ -19,9 +16,7 @@ signingWindow::signingWindow(QWidget *parent) :
     QString y = "/db/users.db";
     x.append(y);
 
-
     users_db.setDatabaseName(x);
-
 
     if(!users_db.open())
         ui->label_status->setText("Failed to open database");
@@ -44,17 +39,14 @@ void signingWindow::on_pushButton_signin_clicked()
     QString age = ui->spinBox_age->text();
 
     if(password.length()<3){
-        ui->label_status->setText("Hasło musi mieć min 3 znaki😺");
+        ui->label_status->setText("Password must be min 3 chars long😺");
         return;
     }
 
     if(age<=13){
-        ui->label_status->setText("Musisz mieć ponad 13 lat, żeby się zarejestrować😺");
+        ui->label_status->setText("You have to be at least 13 years to sign in😺");
         return;
     }
-
-
-
 
     if(!users_db.isOpen()){
         qDebug()<<"Failed to open database";
@@ -75,13 +67,9 @@ void signingWindow::on_pushButton_signin_clicked()
         }
         if(count>1){
             ui->label_status->setText("username pis correct! yupiiii");
-            //todo dodanie użytkownika + exepcion
         }
         if(count<1){
             ui->label_status->setText("username and password are not in db!😿");
-
-            //if(qry.exec("insert into users (id, name, age, username, password) values ($next_id, :"+name+", "+age+", :"+username+", :"+password+");")) QMessageBox::information(this, "Sign in", "Data accepted!");
-            //else QMessageBox::warning(this, "Error", qry.lastError().text()+"Error code: "+qry.lastError().number());
 
             qry.prepare("INSERT INTO users (id, name, age, username, password) VALUES ( null, :name, :age, :username, :password)");  //id przyjmuje wartość null, bo sam się potrafi inkrementować
             qry.bindValue(":name", name);

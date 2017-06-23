@@ -27,11 +27,8 @@ private slots:
 
     void on_button_signin_clicked();
 
-    void on_pushButton_player_clicked();
-
     void on_pushButton_dragndrop_clicked();
 
-    void on_pushButton_clicked();
 
 private:
     Ui::welcome_window *ui;

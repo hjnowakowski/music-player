@@ -19,9 +19,6 @@ TEMPLATE = app
 
 DEFINES += QT_DEPRECATED_WARNINGS
 
-
-
-
 SOURCES += src/main.cpp\
     src/welcome_window.cpp \
     src/log_window.cpp \

@@ -45,25 +45,8 @@ void MainWindow::on_lineEdit_editingFinished()
 
 void MainWindow::on_pushButton_Login_clicked()
 {
-    time_t t = time(0);
-    struct tm * now = localtime( & t );
-    std::string year = std::to_string(now->tm_year + 1900);
-    std::string mon = std::to_string(now->tm_mon + 1);
-    std::string day = std::to_string(now->tm_mday);
-    //konwersja do qstring, bo qt tego wymaga
-    QString year1 = QString::fromStdString(year);
-    QString mon1 = QString::fromStdString(mon);
-    QString day1 = QString::fromStdString(day);
-
-
     QString username = ui->lineEdit_username->text();
     QString password = ui->lineEdit_password->text();
-
-    //ui->label_data->setText(year1+'-' + mon1+'-' + day1);  //chwilowo
-
-
-
-
     if(!users_db.isOpen()){
         qDebug()<<"Failed to open database";
         return;
@@ -83,9 +66,7 @@ void MainWindow::on_pushButton_Login_clicked()
             hide();
             playerwindow = new player_window(this);
             playerwindow->show();
-
         }
-
         if(count>1)
             ui->label_status->setText("duplicate username and password!😾");
         if(count<1)
@@ -95,8 +76,5 @@ void MainWindow::on_pushButton_Login_clicked()
 
 void MainWindow::on_pushButton_clicked()
 {
-
-
     return;
-
 }

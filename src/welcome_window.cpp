@@ -37,20 +37,10 @@ void welcome_window::on_button_signin_clicked()
     signwindow->show();
 }
 
-void welcome_window::on_pushButton_player_clicked()
-{
-    hide();
-    playerwindow = new player_window(this);
-    playerwindow->show();
-}
+
 void welcome_window::on_pushButton_dragndrop_clicked()
 {
     return;
 }
 
-void welcome_window::on_pushButton_clicked()
-{
-    hide();
-    playerwindow = new player_window(this);
-    playerwindow->show();
-}
+

@@ -93,7 +93,7 @@ background-color: hex(#616161);</string>
      <rect>
       <x>430</x>
       <y>370</y>
-      <width>51</width>
+      <width>61</width>
       <height>24</height>
      </rect>
     </property>
@@ -106,7 +106,7 @@ background-color: hex(#616161);</string>
      <rect>
       <x>370</x>
       <y>370</y>
-      <width>51</width>
+      <width>61</width>
       <height>24</height>
      </rect>
     </property>
@@ -117,7 +117,7 @@ background-color: hex(#616161);</string>
    <widget class="QPushButton" name="pushButton_next">
     <property name="geometry">
      <rect>
-      <x>380</x>
+      <x>430</x>
       <y>410</y>
       <width>41</width>
       <height>24</height>
@@ -130,7 +130,7 @@ background-color: hex(#616161);</string>
    <widget class="QPushButton" name="pushButton_prev">
     <property name="geometry">
      <rect>
-      <x>430</x>
+      <x>380</x>
       <y>410</y>
       <width>41</width>
       <height>24</height>
@@ -238,9 +238,9 @@ background-color: hex(#616161);</string>
    <widget class="QPushButton" name="pushButton_save_playlist">
     <property name="geometry">
      <rect>
-      <x>380</x>
+      <x>370</x>
       <y>80</y>
-      <width>91</width>
+      <width>121</width>
       <height>24</height>
      </rect>
     </property>
@@ -251,9 +251,9 @@ background-color: hex(#616161);</string>
    <widget class="QPushButton" name="pushButton_open_playlist">
     <property name="geometry">
      <rect>
-      <x>380</x>
+      <x>370</x>
       <y>110</y>
-      <width>91</width>
+      <width>121</width>
       <height>24</height>
      </rect>
     </property>

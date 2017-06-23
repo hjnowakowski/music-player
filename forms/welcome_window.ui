@@ -102,24 +102,6 @@ color: rgb(0, 0, 0);</string>
       <string>Zakończ</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton">
-     <property name="geometry">
-      <rect>
-       <x>140</x>
-       <y>330</y>
-       <width>80</width>
-       <height>24</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>player, test</string>
-     </property>
-    </widget>
-    <zorder>button_login</zorder>
-    <zorder>button_signin</zorder>
-    <zorder>Quit</zorder>
-    <zorder>pushButton</zorder>
-    <zorder>label_welcome</zorder>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

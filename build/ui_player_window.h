@@ -92,16 +92,16 @@ public:
         pushButton_5->setGeometry(QRect(300, 410, 51, 24));
         pushButton_pause = new QPushButton(centralwidget);
         pushButton_pause->setObjectName(QStringLiteral("pushButton_pause"));
-        pushButton_pause->setGeometry(QRect(430, 370, 51, 24));
+        pushButton_pause->setGeometry(QRect(430, 370, 61, 24));
         pushButton_6 = new QPushButton(centralwidget);
         pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
-        pushButton_6->setGeometry(QRect(370, 370, 51, 24));
+        pushButton_6->setGeometry(QRect(370, 370, 61, 24));
         pushButton_next = new QPushButton(centralwidget);
         pushButton_next->setObjectName(QStringLiteral("pushButton_next"));
-        pushButton_next->setGeometry(QRect(380, 410, 41, 24));
+        pushButton_next->setGeometry(QRect(430, 410, 41, 24));
         pushButton_prev = new QPushButton(centralwidget);
         pushButton_prev->setObjectName(QStringLiteral("pushButton_prev"));
-        pushButton_prev->setGeometry(QRect(430, 410, 41, 24));
+        pushButton_prev->setGeometry(QRect(380, 410, 41, 24));
         layoutWidget = new QWidget(centralwidget);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
         layoutWidget->setGeometry(QRect(100, 20, 193, 18));
@@ -164,10 +164,10 @@ public:
 
         pushButton_save_playlist = new QPushButton(centralwidget);
         pushButton_save_playlist->setObjectName(QStringLiteral("pushButton_save_playlist"));
-        pushButton_save_playlist->setGeometry(QRect(380, 80, 91, 24));
+        pushButton_save_playlist->setGeometry(QRect(370, 80, 121, 24));
         pushButton_open_playlist = new QPushButton(centralwidget);
         pushButton_open_playlist->setObjectName(QStringLiteral("pushButton_open_playlist"));
-        pushButton_open_playlist->setGeometry(QRect(380, 110, 91, 24));
+        pushButton_open_playlist->setGeometry(QRect(370, 110, 121, 24));
         player_window->setCentralWidget(centralwidget);
         menubar = new QMenuBar(player_window);
         menubar->setObjectName(QStringLiteral("menubar"));
