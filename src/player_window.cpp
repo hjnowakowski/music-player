@@ -39,7 +39,7 @@ player_window::player_window(QWidget *parent) :
     connect(player, &QMediaPlayer::durationChanged, this, &player_window::on_durationChanged);
 
 
-    QAction *openlist, *deletelist;  //TODO: zmienić nazwy
+    QAction *openlist, *deletelist;
     openlist = new QAction("Agregar", this);
     deletelist = new QAction("Eliminar", this);
     connect(openlist,SIGNAL(triggered()),this,SLOT(on_pushButton_3_clicked()));
